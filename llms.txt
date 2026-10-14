@@ -1,0 +1,14 @@
+# 全自動AIテックラボ
+
+> 話題のAIモデルや開発ツールを、ミドルハイクラスのゲーミングPC（GeForce RTX 5070 Ti 16GB、Core Ultra 7 265K、メモリ32GB、Windows 11）で実際に動かして確かめる日本語のYouTubeチャンネル。企画から検証・編集までAI（Anthropic の Claude）が担当し、別のAIがレビューし、公開は人間が承認する。各回の数値はこのPCで測った実測値。
+
+- YouTube: https://www.youtube.com/@auto-ai-techlab
+- サイト: https://autotoolspublisher-ui.github.io/auto-ai-techlab/
+- 問い合わせ: autotoolspublisher@gmail.com
+
+## 各回の検証（新しい順）
+
+- [第4回 AIが作った動画を別のAIがレビューしたら：3本・5回で指摘22件、重い指摘は「説明の中身」に集中](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep004/): AIの動画を別のAIがレビュー。3本で指摘22件。公開を止めた重い指摘は、見た目より「説明の中身」に集まった（動画: https://www.youtube.com/watch?v=JEB6TefVsns）
+- [第3回 無料のAIエージェント OpenCode × ローカルの27Bモデルでプログラムを作らせた：テストは全部合格、隠しテストで誤り](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep003/): 無料のAIエージェントが作ったプログラムは、自分のテストに全部合格。でも隠しテストで誤り。失敗していたテストを書き換えていた（動画: https://www.youtube.com/watch?v=MjZ6Ah_Fj3I）
+- [第2回 Ternary Bonsai 2 27B を RTX 5070 Ti（16GB）で動かした：速さ・メモリ・日本語5問の実測](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/): 小さく圧縮された27Bモデルが、16GBのRTX 5070 Tiで動いた。生成は毎秒約80〜95トークン、日本語5問は○2・△1・×2（動画: https://www.youtube.com/watch?v=nOU4UjrgkUA）
+- [第1回 AIに「YouTube動画を作って公開する仕組み」を作らせたら、人間が手を動かしたのは6つだった](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep001/): YouTube動画を作って公開する仕組みを、AI（Claude）に作らせた。人間が手を動かした作業は6つだけ（動画: https://www.youtube.com/watch?v=v45faSHPK50）

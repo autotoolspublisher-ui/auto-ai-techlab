@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ternary Bonsai 2 27B を RTX 5070 Ti（16GB）で動かした：速さ・メモリ・日本語5問の実測｜第2回｜全自動AIテックラボ</title>
+<meta name="description" content="重みを小さく圧縮した27Bの言語モデル「Ternary Bonsai 2 27B」を、ビデオメモリ16GBの RTX 5070 Ti で動かし、生成の速さ、GPUメモリの使用量、日本語の5問の出来を実測しました。">
+<link rel="canonical" href="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="全自動AIテックラボ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ternary Bonsai 2 27B を RTX 5070 Ti（16GB）で動かした：速さ・メモリ・日本語5問の実測">
+<meta property="og:description" content="重みを小さく圧縮した27Bの言語モデル「Ternary Bonsai 2 27B」を、ビデオメモリ16GBの RTX 5070 Ti で動かし、生成の速さ、GPUメモリの使用量、日本語の5問の出来を実測しました。">
+<meta property="og:url" content="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/">
+<meta property="og:image" content="https://i.ytimg.com/vi/nOU4UjrgkUA/maxresdefault.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ternary Bonsai 2 27B を RTX 5070 Ti（16GB）で動かした：速さ・メモリ・日本語5問の実測">
+<meta name="twitter:description" content="重みを小さく圧縮した27Bの言語モデル「Ternary Bonsai 2 27B」を、ビデオメモリ16GBの RTX 5070 Ti で動かし、生成の速さ、GPUメモリの使用量、日本語の5問の出来を実測しました。">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/nOU4UjrgkUA/maxresdefault.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org", "name": "全自動AIテックラボ", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/", "logo": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/favicon.svg", "sameAs": ["https://www.youtube.com/@auto-ai-techlab"], "email": "autotoolspublisher@gmail.com", "description": "話題のAIを手元のゲーミングPCで実際に動かして確かめるYouTubeチャンネル。企画から編集までAI（Claude）が担当し、公開は人間が承認する。"}, {"@type": "VideoObject", "name": "27Bのモデルが6GBに？ 話題の「Ternary Bonsai」をRTX 5070 Tiで動かしてみた【日本語5問の採点つき】｜第2回", "description": "重みを小さく圧縮した27Bの言語モデル「Ternary Bonsai 2 27B」を、ビデオメモリ16GBの RTX 5070 Ti で動かし、生成の速さ、GPUメモリの使用量、日本語の5問の出来を実測しました。", "thumbnailUrl": ["https://i.ytimg.com/vi/nOU4UjrgkUA/maxresdefault.jpg", "https://i.ytimg.com/vi/nOU4UjrgkUA/hqdefault.jpg"], "uploadDate": "2026-10-12T09:06:01Z", "contentUrl": "https://www.youtube.com/watch?v=nOU4UjrgkUA", "embedUrl": "https://www.youtube.com/embed/nOU4UjrgkUA", "inLanguage": "ja", "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "duration": "PT9M52S", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/#video"}, {"@type": "Article", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/#article", "headline": "Ternary Bonsai 2 27B を RTX 5070 Ti（16GB）で動かした：速さ・メモリ・日本語5問の実測", "description": "重みを小さく圧縮した27Bの言語モデル「Ternary Bonsai 2 27B」を、ビデオメモリ16GBの RTX 5070 Ti で動かし、生成の速さ、GPUメモリの使用量、日本語の5問の出来を実測しました。", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/", "datePublished": "2026-10-12T18:06:01+09:00", "dateModified": "2026-10-15T00:20:40.983443+09:00", "inLanguage": "ja", "image": "https://i.ytimg.com/vi/nOU4UjrgkUA/maxresdefault.jpg", "author": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "about": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/#video"}, "mainEntityOfPage": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/"}, {"@type": "FAQPage", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/#faq", "mainEntity": [{"@type": "Question", "name": "Ternary Bonsai 2 27B は16GBのGPUで動きますか？", "acceptedAnswer": {"@type": "Answer", "text": "RTX 5070 Ti（16GB）で動きました。コンテキスト65,536での GPUメモリの増加は、PTQ1_0 で約9.8GiB、PQ2_0 で約11.0GiBでした。"}}, {"@type": "Question", "name": "RTX 5070 Ti での生成速度は？", "acceptedAnswer": {"@type": "Answer", "text": "llama-bench（tg128、3回平均）で PTQ1_0 が95.3トークン/秒、PQ2_0 が80.8トークン/秒でした。RTX 4090 でのメーカー値（PTQ1_0 約91、PQ2_0 81.2）と近い値です。"}}, {"@type": "Question", "name": "日本語は使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "この回の5問では○2・△1・×2でした。計算と要約は正解でしたが、敬語の不自然さや、事実の誤り、考えすぎて答えが出ない問題がありました。"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/"}, {"@type": "ListItem", "position": 2, "name": "第2回", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep002/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0f1724; --bg2: #152033; --panel: #1b2940; --line: #2a3b57; --text: #eef3fb; --muted: #9fb0c8; --accent: #ffb547; --blue: #4fb3ff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "BIZ UDPGothic", "Yu Gothic UI", "Hiragino Sans", sans-serif; line-height: 1.85; }
+  a { color: var(--blue); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  header.top { border-bottom: 1px solid var(--line); background: rgba(15,23,36,.9); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+  header.top .wrap { max-width: 1080px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { color: var(--text); text-decoration: none; font-weight: 700; }
+  .brand span { color: var(--accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: 999px; font-weight: 700; text-decoration: none; white-space: nowrap; line-height: 1.2; }
+  .btn.sub { background: #ff3b3b; color: #fff; box-shadow: 0 8px 24px rgba(255,59,59,.3); }
+  .btn.ghost { border: 2px solid var(--line); color: var(--text); }
+  .btn.small { height: 36px; padding: 0 16px; font-size: 14px; }
+  .yt { width: 22px; height: 16px; background: #fff; border-radius: 4px; position: relative; flex: none; display: inline-block; }
+  .yt:after { content: ""; position: absolute; left: 8px; top: 4px; border-left: 8px solid #ff3b3b; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  nav.crumb { font-size: 13px; color: var(--muted); padding: 18px 0 0; }
+  nav.crumb a { color: var(--muted); }
+  article { padding: 18px 0 56px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--muted); font-size: 14px; }
+  .no { color: var(--accent); font-weight: 700; }
+  .tag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: rgba(79,179,255,.15); color: var(--blue); }
+  h1 { font-size: clamp(24px, 3.6vw, 34px); line-height: 1.45; margin: 10px 0 16px; }
+  .lead { color: #d7e0ee; font-size: 17px; }
+  .thumb { position: relative; display: block; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #0b111c; margin: 24px 0 14px; border: 1px solid var(--line); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb .play { position: absolute; right: 14px; bottom: 14px; width: 64px; height: 44px; border-radius: 12px; background: rgba(255,59,59,.92); }
+  .thumb .play:after { content: ""; position: absolute; left: 25px; top: 12px; border-left: 17px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .watch { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
+  h2 { font-size: 21px; margin: 40px 0 12px; padding-left: 12px; border-left: 4px solid var(--accent); line-height: 1.5; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 400; width: 34%; }
+  td { color: #e6edf7; }
+  ul { padding-left: 1.3em; }
+  li { margin: 6px 0; color: #d7e0ee; }
+  .limits { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; color: var(--muted); font-size: 14px; }
+  .limits li { color: var(--muted); }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px; margin: 10px 0; }
+  summary { cursor: pointer; font-weight: 700; }
+  details p { margin-top: 8px; color: #d7e0ee; }
+  .pager { display: flex; justify-content: space-between; gap: 14px; margin-top: 44px; font-size: 14px; }
+  .pager a { flex: 1; display: block; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; color: var(--text); text-decoration: none; }
+  .pager a small { display: block; color: var(--muted); }
+  .pager .next { text-align: right; }
+  .cta { margin-top: 44px; text-align: center; background: linear-gradient(135deg, #1b2940, #20304d); border: 1px solid var(--line); border-radius: 18px; padding: 28px 20px; }
+  .cta p { color: var(--muted); margin: 6px 0 18px; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 26px; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  @media (max-width: 560px) { th { width: 40%; } .pager { flex-direction: column; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../../">全自動<span>AI</span>テックラボ</a>
+  <a class="btn sub small" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>登録</a>
+</div></header>
+<div class="wrap">
+  <nav class="crumb" aria-label="パンくずリスト"><a href="../../">トップ</a> ／ <a href="../../#videos">動画</a> ／ 第2回</nav>
+  <article>
+    <div class="meta"><span class="no">第2回</span><span class="tag">AIモデル</span><span>公開：<time datetime="2026-10-12">2026年10月12日</time></span><span>動画 9分52秒</span></div>
+    <h1>Ternary Bonsai 2 27B を RTX 5070 Ti（16GB）で動かした：速さ・メモリ・日本語5問の実測</h1>
+    <p class="lead">重みを小さく圧縮した27Bの言語モデル「Ternary Bonsai 2 27B」を、ビデオメモリ16GBの RTX 5070 Ti で動かし、生成の速さ、GPUメモリの使用量、日本語の5問の出来を実測しました。</p>
+    <a class="thumb" href="https://www.youtube.com/watch?v=nOU4UjrgkUA" target="_blank" rel="noopener" aria-label="YouTube で動画を見る"><img src="https://i.ytimg.com/vi/nOU4UjrgkUA/maxresdefault.jpg" alt="第2回のサムネイル" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/nOU4UjrgkUA/hqdefault.jpg'}"><span class="play"></span></a>
+    <div class="watch"><a class="btn sub" href="https://www.youtube.com/watch?v=nOU4UjrgkUA" target="_blank" rel="noopener"><span class="yt"></span>YouTube で見る</a><a class="btn ghost" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener">チャンネル登録</a></div>
+    <p class="note">YouTube のタイトル：27Bのモデルが6GBに？ 話題の「Ternary Bonsai」をRTX 5070 Tiで動かしてみた【日本語5問の採点つき】｜第2回</p>
+
+    <h2>この回で試したこと</h2>
+    <table><tr><th>GPU</th><td>GeForce RTX 5070 Ti（16GB、ドライバ 610.62）</td></tr><tr><th>実行</th><td>PrismML-Eng/llama.cpp（prism-b10772、Windows CUDA 13.3版の配布バイナリ）</td></tr><tr><th>モデル</th><td>prism-ml/Ternary-Bonsai-2-27B-gguf の PTQ1_0（5.54GiB）と PQ2_0（6.71GiB）</td></tr><tr><th>日本語の問題</th><td>敬語のメール・計算・地理・プログラム・要約の5問。採点基準は試す前に決めた</td></tr></table>
+
+    <h2>結果（実測）</h2>
+    <table><tr><th>生成の速さ（llama-bench tg128、3回平均）</th><td>PTQ1_0：95.3トークン/秒、PQ2_0：80.8トークン/秒</td></tr><tr><th>メーカー値（RTX 4090）</th><td>PTQ1_0：約91、PQ2_0：81.2トークン/秒（条件のそろった値）</td></tr><tr><th>GPUメモリの増加（コンテキスト65,536）</th><td>PTQ1_0：10,073MiB（約9.8GiB）、PQ2_0：11,218MiB（約11.0GiB）</td></tr><tr><th>日本語5問（PQ2_0、既定の設定）</th><td>○2・△1・×2</td></tr></table>
+
+    <h2>わかったこと</h2>
+    <ul><li>Windows の配布バイナリで、そのまま動いた</li><li>16GBのGPUに収まった。モデルのファイルのほかに、長い文章を扱うための領域（KVキャッシュなど）を使う</li><li>計算と要約は正解。敬語のメールは不自然な表現があり、内陸の県を答える問題は誤りが4つあった</li><li>プログラムの問題では、考える過程が文字コードを並べ続けるループに入り、出力の上限を使い切って答えが空になった</li></ul>
+
+    <h2>結果の範囲</h2>
+    <div class="limits"><ul><li>各問1回ずつ（seed 固定）の結果です。問題を変えると結果は変わりえます</li></ul></div>
+
+    <h2>よくある質問</h2>
+    <details open><summary>Ternary Bonsai 2 27B は16GBのGPUで動きますか？</summary><p>RTX 5070 Ti（16GB）で動きました。コンテキスト65,536での GPUメモリの増加は、PTQ1_0 で約9.8GiB、PQ2_0 で約11.0GiBでした。</p></details><details open><summary>RTX 5070 Ti での生成速度は？</summary><p>llama-bench（tg128、3回平均）で PTQ1_0 が95.3トークン/秒、PQ2_0 が80.8トークン/秒でした。RTX 4090 でのメーカー値（PTQ1_0 約91、PQ2_0 81.2）と近い値です。</p></details><details open><summary>日本語は使えますか？</summary><p>この回の5問では○2・△1・×2でした。計算と要約は正解でしたが、敬語の不自然さや、事実の誤り、考えすぎて答えが出ない問題がありました。</p></details>
+
+    <div class="pager"><a href="../ep001/"><small>← 前の回</small>第1回</a><a class="next" href="../ep003/"><small>次の回 →</small>第3回</a></div>
+
+    <div class="cta">
+      <b>次の検証も、YouTube で公開しています</b>
+      <p>月・水・金の18:00に、話題のAIを手元のゲーミングPCで試した結果を出しています。</p>
+      <a class="btn sub" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>チャンネル登録する</a>
+    </div>
+    <p class="note">このページと動画は、AI（Anthropic の Claude）が検証の記録をもとに作り、人間の運営が公開を承認しています。数値は記録（ログ）の値です。音声：VOICEVOX:春日部つむぎ ／ 映像の一部：Google Veo（AI生成）</p>
+  </article>
+</div>
+<footer><div class="wrap">© 全自動AIテックラボ（個人運営）　<a href="../../">トップ</a>　<a href="../../privacy.html">プライバシーポリシー</a>　<a href="https://www.youtube.com/@auto-ai-techlab" target="_blank" rel="noopener">YouTube チャンネル</a></div></footer>
+</body>
+</html>
