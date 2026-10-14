@@ -88,6 +88,21 @@
   .note h4 { font-size: 16px; margin-bottom: 6px; }
   .note p { color: var(--muted); font-size: 14px; }
 
+  .pcsec { padding: 48px 0 8px; }
+  .pcbox { background: linear-gradient(135deg, #18263c, #1d2f4b); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; align-items: center; }
+  .pcbox .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .12em; font-size: 13px; }
+  .pcbox h2 { margin: 6px 0 10px; line-height: 1.4; }
+  .pcbox .sub { margin-bottom: 0; font-size: 15px; }
+  .specs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .spec { background: rgba(15,23,36,.6); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; display: flex; flex-direction: column; }
+  .spec span { color: var(--muted); font-size: 12px; letter-spacing: .06em; }
+  .spec b { font-size: 18px; line-height: 1.4; }
+  .spec small { color: var(--muted); font-size: 13px; }
+  .spec.main { grid-column: 1 / -1; border-color: rgba(118,185,0,.55); }
+  .spec.main b { font-size: 22px; color: #9fe34a; }
+  @media (max-width: 860px) { .pcbox { grid-template-columns: 1fr; padding: 22px; } }
+  @media (max-width: 420px) { .specs { grid-template-columns: 1fr; } }
+
   .band { text-align: center; background: linear-gradient(135deg, #1b2940, #20304d); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .band h2 { margin-bottom: 10px; }
   .band p { color: var(--muted); margin-bottom: 26px; }
@@ -108,13 +123,13 @@
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="#">全自動<span>AI</span>テックラボ</a>
-  <nav><a href="#videos" class="hide-sm">動画</a><a href="#how" class="hide-sm">しくみ</a><a class="btn sub small" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><i class="yt"></i>登録</a></nav>
+  <nav><a href="#pc" class="hide-sm">検証PC</a><a href="#videos" class="hide-sm">動画</a><a href="#how" class="hide-sm">しくみ</a><a class="btn sub small" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><i class="yt"></i>登録</a></nav>
 </div></header>
 
 <section class="hero"><div class="wrap">
   <div class="eyebrow">YOUTUBE CHANNEL｜@auto-ai-techlab</div>
   <h1>話題のAIを、<br><em>手元のPCで</em>試してみる。</h1>
-  <p class="lead">新しく出たAIモデルや開発ツールを、実際に動かして確かめるチャンネルです。動いたか、どれくらい速いか、どこでつまずいたか。うまくいかなかったときも、そのまま見せます。<br>企画から検証・編集までをAIが担当し、公開してよいかは人間が決めています。</p>
+  <p class="lead">新しく出たAIモデルや開発ツールを、ミドルハイクラスのゲーミングPCで実際に動かして確かめるチャンネルです。動いたか、どれくらい速いか、どこでつまずいたか。うまくいかなかったときも、そのまま見せます。<br>企画から検証・編集までをAIが担当し、公開してよいかは人間が決めています。</p>
   <div class="cta">
     <a class="btn sub" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><i class="yt"></i>チャンネル登録</a>
     <a class="btn ghost" href="#videos">動画を見る</a>
@@ -123,6 +138,23 @@
     <div class="fact"><b>4</b><span>本を公開</span></div>
     <div class="fact"><b>月・水・金</b><span>18:00 に公開</span></div>
     <div class="fact"><b>毎回</b><span>実機で試した結果つき</span></div>
+  </div>
+</div></section>
+
+<section id="pc" class="pcsec"><div class="wrap">
+  <div class="pcbox">
+    <div class="pchead">
+      <div class="eyebrow">TEST MACHINE</div>
+      <h2>検証に使っているPC</h2>
+      <p class="sub">AI専用のサーバーや業務用のGPUではなく、ミドルハイクラスのゲーミングPCです。動画に出てくる速さやメモリの数字は、すべてこのPCで測ったものです。</p>
+    </div>
+    <div class="specs">
+      <div class="spec main"><span>GPU</span><b>GeForce RTX 5070 Ti</b><small>ビデオメモリ 16GB</small></div>
+      <div class="spec"><span>CPU</span><b>Core Ultra 7 265K</b><small>Intel</small></div>
+      <div class="spec"><span>メモリ</span><b>32GB</b><small>DDR5-5600（16GB×2）</small></div>
+      <div class="spec"><span>ストレージ</span><b>SSD 2TB</b><small>NVMe</small></div>
+      <div class="spec"><span>OS</span><b>Windows 11</b><small>Home</small></div>
+    </div>
   </div>
 </div></section>
 
@@ -160,7 +192,7 @@
 
 <footer><div class="wrap row">
   <div>© 全自動AIテックラボ（個人運営）<br>音声：VOICEVOX:春日部つむぎ ／ 映像の一部：Google Veo（AI生成）<br>このサイトは YouTube・Google・各メーカーの公式サイトではありません。</div>
-  <div><a href="privacy.html">プライバシーポリシー</a>　<a href="https://www.youtube.com/@auto-ai-techlab" target="_blank" rel="noopener">YouTube チャンネル</a><br>お問い合わせ：<a href="mailto:autotoolspublisher@gmail.com">autotoolspublisher@gmail.com</a><br><small>更新：2026-10-14</small></div>
+  <div><a href="privacy.html">プライバシーポリシー</a>　<a href="https://www.youtube.com/@auto-ai-techlab" target="_blank" rel="noopener">YouTube チャンネル</a><br>お問い合わせ：<a href="mailto:autotoolspublisher@gmail.com">autotoolspublisher@gmail.com</a><br><small>更新：2026-10-15</small></div>
 </div></footer>
 </body>
 </html>
