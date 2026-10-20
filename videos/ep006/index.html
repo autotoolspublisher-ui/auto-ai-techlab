@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vite+ 1.0 の整形（Oxfmt）とリント（Oxlint）は宣伝どおり速いか：整形は約50倍、リントは約20倍｜第6回｜全自動AIテックラボ</title>
+<meta name="description" content="Web開発の道具をまとめた Vite+ の整形（Oxfmt）とリント（Oxlint）を、Prettier・ESLint と同じコード（date-fns v4.1.0 の src、1,574ファイル）で5回ずつ測りました。整形の結果が P…">
+<link rel="canonical" href="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="全自動AIテックラボ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vite+ 1.0 の整形（Oxfmt）とリント（Oxlint）は宣伝どおり速いか：整形は約50倍、リントは約20倍">
+<meta property="og:description" content="Web開発の道具をまとめた Vite+ の整形（Oxfmt）とリント（Oxlint）を、Prettier・ESLint と同じコード（date-fns v4.1.0 の src、1,574ファイル）で5回ずつ測りました。整形の結果が P…">
+<meta property="og:url" content="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/">
+<meta property="og:image" content="https://i.ytimg.com/vi/gCpXOR6MEwM/maxresdefault.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vite+ 1.0 の整形（Oxfmt）とリント（Oxlint）は宣伝どおり速いか：整形は約50倍、リントは約20倍">
+<meta name="twitter:description" content="Web開発の道具をまとめた Vite+ の整形（Oxfmt）とリント（Oxlint）を、Prettier・ESLint と同じコード（date-fns v4.1.0 の src、1,574ファイル）で5回ずつ測りました。整形の結果が P…">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/gCpXOR6MEwM/maxresdefault.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org", "name": "全自動AIテックラボ", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/", "logo": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/favicon.svg", "sameAs": ["https://www.youtube.com/@auto-ai-techlab"], "email": "autotoolspublisher@gmail.com", "description": "話題のAIを手元のゲーミングPCで実際に動かして確かめるYouTubeチャンネル。企画から編集までAI（Claude）が担当し、公開は人間が承認する。"}, {"@type": "VideoObject", "name": "Vite+（Oxfmt・Oxlint）は本当にPrettierの30倍速い？ 手元で測った｜第6回", "description": "Web開発の道具をまとめた Vite+ の整形（Oxfmt）とリント（Oxlint）を、Prettier・ESLint と同じコード（date-fns v4.1.0 の src、1,574ファイル）で5回ずつ測りました。整形の結果が Prettier と同じになるかと、リントの指摘の違いも調べています。", "thumbnailUrl": ["https://i.ytimg.com/vi/gCpXOR6MEwM/maxresdefault.jpg", "https://i.ytimg.com/vi/gCpXOR6MEwM/hqdefault.jpg"], "uploadDate": "2026-10-19T09:00:28Z", "contentUrl": "https://www.youtube.com/watch?v=gCpXOR6MEwM", "embedUrl": "https://www.youtube.com/embed/gCpXOR6MEwM", "inLanguage": "ja", "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "duration": "PT8M27S", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/#video"}, {"@type": "Article", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/#article", "headline": "Vite+ 1.0 の整形（Oxfmt）とリント（Oxlint）は宣伝どおり速いか：整形は約50倍、リントは約20倍", "description": "Web開発の道具をまとめた Vite+ の整形（Oxfmt）とリント（Oxlint）を、Prettier・ESLint と同じコード（date-fns v4.1.0 の src、1,574ファイル）で5回ずつ測りました。整形の結果が Prettier と同じになるかと、リントの指摘の違いも調べています。", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/", "datePublished": "2026-10-19T18:00:28+09:00", "dateModified": "2026-10-20T11:45:35.397505+09:00", "inLanguage": "ja", "image": "https://i.ytimg.com/vi/gCpXOR6MEwM/maxresdefault.jpg", "author": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "about": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/#video"}, "mainEntityOfPage": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/"}, {"@type": "FAQPage", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/#faq", "mainEntity": [{"@type": "Question", "name": "Vite+ の整形（Oxfmt）は Prettier より本当に速いですか？", "acceptedAnswer": {"@type": "Answer", "text": "この回の測定（date-fns の src、1,574ファイル、5回の中央値）では、既定どうしで約50倍、1行の長さを80文字にそろえると約29倍速く終わりました。"}}, {"@type": "Question", "name": "Oxfmt の整形結果は Prettier と同じになりますか？", "acceptedAnswer": {"@type": "Answer", "text": "1行の長さを80文字にそろえると、1,574ファイル中1,533ファイル（97.4%）が同じでした。違った41ファイルの多くは、アラビア文字・インドの文字・タイ文字などを含む言語のファイルでした。"}}, {"@type": "Question", "name": "Oxlint は ESLint の50〜100倍速いですか？", "acceptedAnswer": {"@type": "Answer", "text": "この回は、コマンド全体の時間で約20倍でした。ツール自身が表示する処理の時間だけで割ると約51倍ですが、ESLint 側とは測り方がそろっていません。"}}, {"@type": "Question", "name": "Vite+ はどうやって入れましたか？", "acceptedAnswer": {"@type": "Answer", "text": "公式の入れ方はユーザーのフォルダに入るため使わず、npm で作業フォルダの中に vite-plus を入れました（84パッケージ、約12秒）。"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/"}, {"@type": "ListItem", "position": 2, "name": "第6回", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0f1724; --bg2: #152033; --panel: #1b2940; --line: #2a3b57; --text: #eef3fb; --muted: #9fb0c8; --accent: #ffb547; --blue: #4fb3ff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "BIZ UDPGothic", "Yu Gothic UI", "Hiragino Sans", sans-serif; line-height: 1.85; }
+  a { color: var(--blue); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  header.top { border-bottom: 1px solid var(--line); background: rgba(15,23,36,.9); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+  header.top .wrap { max-width: 1080px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { color: var(--text); text-decoration: none; font-weight: 700; }
+  .brand span { color: var(--accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: 999px; font-weight: 700; text-decoration: none; white-space: nowrap; line-height: 1.2; }
+  .btn.sub { background: #ff3b3b; color: #fff; box-shadow: 0 8px 24px rgba(255,59,59,.3); }
+  .btn.ghost { border: 2px solid var(--line); color: var(--text); }
+  .btn.small { height: 36px; padding: 0 16px; font-size: 14px; }
+  .yt { width: 22px; height: 16px; background: #fff; border-radius: 4px; position: relative; flex: none; display: inline-block; }
+  .yt:after { content: ""; position: absolute; left: 8px; top: 4px; border-left: 8px solid #ff3b3b; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  nav.crumb { font-size: 13px; color: var(--muted); padding: 18px 0 0; }
+  nav.crumb a { color: var(--muted); }
+  article { padding: 18px 0 56px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--muted); font-size: 14px; }
+  .no { color: var(--accent); font-weight: 700; }
+  .tag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: rgba(79,179,255,.15); color: var(--blue); }
+  h1 { font-size: clamp(24px, 3.6vw, 34px); line-height: 1.45; margin: 10px 0 16px; }
+  .lead { color: #d7e0ee; font-size: 17px; }
+  .thumb { position: relative; display: block; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #0b111c; margin: 24px 0 14px; border: 1px solid var(--line); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb .play { position: absolute; right: 14px; bottom: 14px; width: 64px; height: 44px; border-radius: 12px; background: rgba(255,59,59,.92); }
+  .thumb .play:after { content: ""; position: absolute; left: 25px; top: 12px; border-left: 17px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .watch { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
+  h2 { font-size: 21px; margin: 40px 0 12px; padding-left: 12px; border-left: 4px solid var(--accent); line-height: 1.5; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 400; width: 34%; }
+  td { color: #e6edf7; }
+  ul { padding-left: 1.3em; }
+  li { margin: 6px 0; color: #d7e0ee; }
+  .limits { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; color: var(--muted); font-size: 14px; }
+  .limits li { color: var(--muted); }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px; margin: 10px 0; }
+  summary { cursor: pointer; font-weight: 700; }
+  details p { margin-top: 8px; color: #d7e0ee; }
+  .pager { display: flex; justify-content: space-between; gap: 14px; margin-top: 44px; font-size: 14px; }
+  .pager a { flex: 1; display: block; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; color: var(--text); text-decoration: none; }
+  .pager a small { display: block; color: var(--muted); }
+  .pager .next { text-align: right; }
+  .cta { margin-top: 44px; text-align: center; background: linear-gradient(135deg, #1b2940, #20304d); border: 1px solid var(--line); border-radius: 18px; padding: 28px 20px; }
+  .cta p { color: var(--muted); margin: 6px 0 18px; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 26px; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  @media (max-width: 560px) { th { width: 40%; } .pager { flex-direction: column; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../../">全自動<span>AI</span>テックラボ</a>
+  <a class="btn sub small" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>登録</a>
+</div></header>
+<div class="wrap">
+  <nav class="crumb" aria-label="パンくずリスト"><a href="../../">トップ</a> ／ <a href="../../#videos">動画</a> ／ 第6回</nav>
+  <article>
+    <div class="meta"><span class="no">第6回</span><span class="tag">Web開発ツール</span><span>公開：<time datetime="2026-10-19">2026年10月19日</time></span><span>動画 8分27秒</span></div>
+    <h1>Vite+ 1.0 の整形（Oxfmt）とリント（Oxlint）は宣伝どおり速いか：整形は約50倍、リントは約20倍</h1>
+    <p class="lead">Web開発の道具をまとめた Vite+ の整形（Oxfmt）とリント（Oxlint）を、Prettier・ESLint と同じコード（date-fns v4.1.0 の src、1,574ファイル）で5回ずつ測りました。整形の結果が Prettier と同じになるかと、リントの指摘の違いも調べています。</p>
+    <a class="thumb" href="https://www.youtube.com/watch?v=gCpXOR6MEwM" target="_blank" rel="noopener" aria-label="YouTube で動画を見る"><img src="https://i.ytimg.com/vi/gCpXOR6MEwM/maxresdefault.jpg" alt="第6回のサムネイル" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/gCpXOR6MEwM/hqdefault.jpg'}"><span class="play"></span></a>
+    <div class="watch"><a class="btn sub" href="https://www.youtube.com/watch?v=gCpXOR6MEwM" target="_blank" rel="noopener"><span class="yt"></span>YouTube で見る</a><a class="btn ghost" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener">チャンネル登録</a></div>
+    <p class="note">YouTube のタイトル：Vite+（Oxfmt・Oxlint）は本当にPrettierの30倍速い？ 手元で測った｜第6回</p>
+
+    <h2>この回で試したこと</h2>
+    <table><tr><th>PC</th><td>Intel Core Ultra 7 265K（20コア）／Windows／Node.js v24.14.0</td></tr><tr><th>Vite+</th><td>npm の vite-plus 1.2.0（MIT）。中身は Oxfmt 0.73.0、Oxlint 1.88.0</td></tr><tr><th>比べる相手</th><td>Prettier 3.9.10、ESLint 10.12.0＋typescript-eslint 8.71.2（推奨の設定、型情報なし）</td></tr><tr><th>対象のコード</th><td>date-fns v4.1.0（MIT）の src。TypeScript 1,479ファイル＋Markdown 95ファイル</td></tr><tr><th>測り方</th><td>コマンドの開始から終了までの時間。交互に5回ずつ測り、中央値で比べた。測り方は計測の前に決めた</td></tr></table>
+
+    <h2>結果（実測）</h2>
+    <table><tr><th>整形のチェック（既定）</th><td>Prettier 11.633秒、Oxfmt 0.235秒（約50倍）</td></tr><tr><th>整形のチェック（Oxfmt の1行を80文字に）</th><td>Oxfmt 0.403秒（28.9倍）</td></tr><tr><th>リント</th><td>ESLint 4.394秒、Oxlint 0.220秒（20.0倍）</td></tr><tr><th>整形の結果が Prettier と同じファイル</th><td>1行80文字にそろえると 1,574ファイル中 1,533（97.4%）</td></tr><tr><th>リントの指摘</th><td>ESLint 537件、Oxlint 13件（規則の数も既定の設定も違う）</td></tr></table>
+
+    <h2>わかったこと</h2>
+    <ul><li>整形は既定どうしで約50倍。1行の長さを Prettier にそろえる設定ファイルを置くと約29倍で、宣伝の「最大30倍」にほぼ届いた</li><li>リントはコマンド全体の時間で約20倍。宣伝の「約50〜100倍」には届かなかった（ツールが表示する処理の時間だけで割ると約51倍。結果を見てから計算したもので、測り方がそろわない）</li><li>1行80文字にそろえても違ったのは41ファイル。うち37はアラビア文字・インドの文字・タイ文字などを含む言語のファイルで、日本語・中国語・韓国語のファイルは同じだった</li><li>ESLint の指摘537件のうち370件は、名前が「_」で始まる、わざと使わない変数だった</li></ul>
+
+    <h2>結果の範囲</h2>
+    <div class="limits"><ul><li>この PC・この1つのコード・各5回の結果です。プロジェクトの大きさ・設定・PC で倍率は変わりえます</li><li>公式の宣伝の測り方は分からないため、宣伝が誤りとは言えません。型情報を使うリント、ビルド、テストは試していません</li></ul></div>
+
+    <h2>よくある質問</h2>
+    <details open><summary>Vite+ の整形（Oxfmt）は Prettier より本当に速いですか？</summary><p>この回の測定（date-fns の src、1,574ファイル、5回の中央値）では、既定どうしで約50倍、1行の長さを80文字にそろえると約29倍速く終わりました。</p></details><details open><summary>Oxfmt の整形結果は Prettier と同じになりますか？</summary><p>1行の長さを80文字にそろえると、1,574ファイル中1,533ファイル（97.4%）が同じでした。違った41ファイルの多くは、アラビア文字・インドの文字・タイ文字などを含む言語のファイルでした。</p></details><details open><summary>Oxlint は ESLint の50〜100倍速いですか？</summary><p>この回は、コマンド全体の時間で約20倍でした。ツール自身が表示する処理の時間だけで割ると約51倍ですが、ESLint 側とは測り方がそろっていません。</p></details><details open><summary>Vite+ はどうやって入れましたか？</summary><p>公式の入れ方はユーザーのフォルダに入るため使わず、npm で作業フォルダの中に vite-plus を入れました（84パッケージ、約12秒）。</p></details>
+
+    <div class="pager"><a href="../ep005/"><small>← 前の回</small>第5回</a><span></span></div>
+
+    <div class="cta">
+      <b>次の検証も、YouTube で公開しています</b>
+      <p>月・水・金の18:00に、話題のAIを手元のゲーミングPCで試した結果を出しています。</p>
+      <a class="btn sub" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>チャンネル登録する</a>
+    </div>
+    <p class="note">このページと動画は、AI（Anthropic の Claude）が検証の記録をもとに作り、人間の運営が公開を承認しています。数値は記録（ログ）の値です。音声：VOICEVOX:春日部つむぎ ／ 映像の一部：Google Veo（AI生成）</p>
+  </article>
+</div>
+<footer><div class="wrap">© 全自動AIテックラボ（個人運営）　<a href="../../">トップ</a>　<a href="../../privacy.html">プライバシーポリシー</a>　<a href="https://www.youtube.com/@auto-ai-techlab" target="_blank" rel="noopener">YouTube チャンネル</a></div></footer>
+</body>
+</html>
