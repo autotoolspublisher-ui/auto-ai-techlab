@@ -1,6 +1,6 @@
 # 全自動AIテックラボ
 
-> 話題のAIモデルや開発ツールを、ミドルハイクラスのゲーミングPC（GeForce RTX 5070 Ti 16GB、Core Ultra 7 265K、メモリ32GB、Windows 11）で実際に動かして確かめる日本語のYouTubeチャンネル。企画から検証・編集までAI（Anthropic の Claude）が担当し、別のAIがレビューし、公開は人間が承認する。各回の数値はこのPCで測った実測値。
+> 話題の技術（AIモデル・開発ツール・アプリ）を、ミドルハイクラスのゲーミングPC（GeForce RTX 5070 Ti 16GB、Core Ultra 7 265K、メモリ32GB、Windows 11）で実際に動かして確かめる日本語のYouTubeチャンネル。企画から検証・編集までAI（Anthropic の Claude）が担当し、別のAIがレビューし、公開は人間が承認する。各回の数値はこのPCで測った実測値。
 
 - YouTube: https://www.youtube.com/@auto-ai-techlab
 - サイト: https://autotoolspublisher-ui.github.io/auto-ai-techlab/
