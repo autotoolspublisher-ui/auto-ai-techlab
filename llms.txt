@@ -8,6 +8,7 @@
 
 ## 各回の検証（新しい順）
 
+- [第9回 動画生成AI LTX-2.5 を RTX 5070 Ti（16GB）で：8秒・720p は省メモリの起動で1本13〜18分、見た目の細かさは Veo が上](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep009/): LTX-2.5をRTX 5070 Ti（16GB）で動かした。2秒・4秒は1本36〜44秒。8秒・720pは初期値の起動では読み込みで止まり、省メモリの起動で1本13〜18分。8秒・1080p級は1本目だけ7分33秒で成功。見た目の細かさは3つともVeoが上（動画: https://www.youtube.com/watch?v=XCAzjt3rNJI）
 - [第8回 ibisOffice（Web 版）で日本の書類5つを開いて Office と比べた：25項目で◯19・△2・✕4](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep008/): ibisOffice（Web版）で日本の書類5つを開き、Officeと25項目で比べると◯19・△2・✕4。縦中横の「10月20日」が「1月2日」に、ふりがなは出ず、集計表は「######」（列を広げると値はExcelと一致）（動画: https://www.youtube.com/watch?v=HNnuzFvelGA）
 - [第7回 Microsoft の MXC で AI が書いたコードを箱に入れて実行：Windows を更新しても、2つのつまずきは変わらなかった](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep007/): MicrosoftのMXCを、Windowsを更新して対応表の範囲に入れて試し直した。2つのつまずき（uiなしで0xC0000142、lstat 'C:\'）は変わらず、変わったのは拒否の記録が出るようになったこと（動画: https://www.youtube.com/watch?v=ulDK4QLdIlo）
 - [第6回 Vite+ 1.0 の整形（Oxfmt）とリント（Oxlint）は宣伝どおり速いか：整形は約50倍、リントは約20倍](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep006/): Vite+ の整形は Prettier の約50倍（設定をそろえると約29倍）。リントは ESLint の約20倍で、宣伝の50〜100倍には届かなかった（動画: https://www.youtube.com/watch?v=gCpXOR6MEwM）
