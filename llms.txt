@@ -8,6 +8,7 @@
 
 ## 各回の検証（新しい順）
 
+- [第12回 AnythingLLM×Foundry Local を実機で：同じモデルの4変種で RTX 84.1・CPU 38.6・内蔵GPU 21.4・NPU 14.2 トークン/秒。一覧で印が付く NPU がいちばん遅かった](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep012/): AnythingLLM×Foundry Localで同じモデルの4変種を比べると、1秒あたりのトークンはRTX 84.1、CPU 38.6、内蔵GPU 21.4、NPU 14.2。アプリの一覧で印が付くNPUがいちばん遅く、答えも変種ごとに違った（動画: https://www.youtube.com/watch?v=0hHSPAZzlrc）
 - [第11回 ibisOffice デスクトップ版 0.8.4 を Windows で：13.7MB の xlsx は 0.80秒・Excel 7.73秒（約9.7倍）。第8回の ####は直り、保存して Office で開けた](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep011/): ibisOffice デスクトップ版 0.8.4 で公式と同じ13.7MBのxlsxを開くと0.80秒、Excelは7.73秒（約9.7倍、公式は27倍）。第8回の####は直り、縦中横・ふりがなは表示されないまま。保存はWord・Excelで確認の窓なしに開き、表示できない縦中横・ふりがなもファイルに残っていた（動画: https://www.youtube.com/watch?v=LXvMEFnbkv4）
 - [第10回 DuckDB 2.0「AIエージェント向けモード」を手元で：省略のない15問でバイト54.8%減、トークンは11〜16%減。22問合計のトークンは増えた](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep010/): DuckDB 2.0のAIエージェント向けモードを、TPC-Hの22問で数え直した。省略のない15問でバイト54.8%減だが、トークンは11〜16%減。22問合計のトークンは増えた（ふつうの表示が7問を40行に省いていた）（動画: https://www.youtube.com/watch?v=I48UE6hxtUo）
 - [第9回 動画生成AI LTX-2.5 を RTX 5070 Ti（16GB）で：8秒・720p は省メモリの起動で1本13〜18分、見た目の細かさは Veo が上](https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep009/): LTX-2.5をRTX 5070 Ti（16GB）で動かした。2秒・4秒は1本36〜44秒。8秒・720pは初期値の起動では読み込みで止まり、省メモリの起動で1本13〜18分。8秒・1080p級は1本目だけ7分33秒で成功。見た目の細かさは3つともVeoが上（動画: https://www.youtube.com/watch?v=XCAzjt3rNJI）
