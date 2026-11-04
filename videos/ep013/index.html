@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WP0CG915CL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WP0CG915CL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tsrs 0.20.1 を Windows の実機で：同じ checker 数で TypeScript 7.0.2 の 2.8〜6.0 倍。8倍を超えたのは --fast の VS Code（8.12倍）だけ。エラー出力は 7.1 beta と4プロジェクトでバイト単位で同じ｜第13回｜全自動AIテックラボ</title>
+<meta name="description" content="AI が Rust に移植した TypeScript コンパイラー tsrs 0.20.1 を、Windows の PC で TypeScript 7.0.2・7.1 beta と比べました。発表の「同じ checker 数で最大8倍速…">
+<link rel="canonical" href="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep013/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="全自動AIテックラボ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tsrs 0.20.1 を Windows の実機で：同じ checker 数で TypeScript 7.0.2 の 2.8〜6.0 倍。8倍を超えたのは --fast の VS Code（8.12倍）だけ。エラー出力は 7.1 beta と4プロジェクトでバイト単位で同じ">
+<meta property="og:description" content="AI が Rust に移植した TypeScript コンパイラー tsrs 0.20.1 を、Windows の PC で TypeScript 7.0.2・7.1 beta と比べました。発表の「同じ checker 数で最大8倍速…">
+<meta property="og:url" content="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep013/">
+<meta property="og:image" content="https://i.ytimg.com/vi/ZCtb6WgidN8/maxresdefault.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="tsrs 0.20.1 を Windows の実機で：同じ checker 数で TypeScript 7.0.2 の 2.8〜6.0 倍。8倍を超えたのは --fast の VS Code（8.12倍）だけ。エラー出力は 7.1 beta と4プロジェクトでバイト単位で同じ">
+<meta name="twitter:description" content="AI が Rust に移植した TypeScript コンパイラー tsrs 0.20.1 を、Windows の PC で TypeScript 7.0.2・7.1 beta と比べました。発表の「同じ checker 数で最大8倍速…">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/ZCtb6WgidN8/maxresdefault.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org", "name": "全自動AIテックラボ", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/", "logo": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/favicon.svg", "sameAs": ["https://www.youtube.com/@auto-ai-techlab"], "email": "autotoolspublisher@gmail.com", "description": "話題の技術（AIモデル・開発ツール・アプリ）を手元のゲーミングPCで実際に動かして確かめるYouTubeチャンネル。企画から編集までAI（Claude）が担当し、公開は人間が承認する。"}, {"@type": "VideoObject", "name": "tsrsをWindowsで実測：AIが移植したTypeScript、本当に8倍速い？本物と同じ答え？｜第13回", "description": "AI が Rust に移植した TypeScript コンパイラー tsrs 0.20.1 を、Windows の PC で TypeScript 7.0.2・7.1 beta と比べました。発表の「同じ checker 数で最大8倍速く、メモリ約70%減」が Windows で出るかと、公式の4プロジェクトで本家と同じ答えを出すか、Windows・日本語の20問でどこが違うかを見ています。", "thumbnailUrl": ["https://i.ytimg.com/vi/ZCtb6WgidN8/maxresdefault.jpg", "https://i.ytimg.com/vi/ZCtb6WgidN8/hqdefault.jpg"], "uploadDate": "2026-11-04T09:00:19Z", "contentUrl": "https://www.youtube.com/watch?v=ZCtb6WgidN8", "embedUrl": "https://www.youtube.com/embed/ZCtb6WgidN8", "inLanguage": "ja", "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "duration": "PT9M58S", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep013/#video"}, {"@type": "Article", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep013/#article", "headline": "tsrs 0.20.1 を Windows の実機で：同じ checker 数で TypeScript 7.0.2 の 2.8〜6.0 倍。8倍を超えたのは --fast の VS Code（8.12倍）だけ。エラー出力は 7.1 beta と4プロジェクトでバイト単位で同じ", "description": "AI が Rust に移植した TypeScript コンパイラー tsrs 0.20.1 を、Windows の PC で TypeScript 7.0.2・7.1 beta と比べました。発表の「同じ checker 数で最大8倍速く、メモリ約70%減」が Windows で出るかと、公式の4プロジェクトで本家と同じ答えを出すか、Windows・日本語の20問でどこが違うかを見ています。", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep013/", "datePublished": "2026-11-04T18:00:19+09:00", "dateModified": "2026-11-04T21:18:36.436138+09:00", "inLanguage": "ja", "image": "https://i.ytimg.com/vi/ZCtb6WgidN8/maxresdefault.jpg", "author": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "about": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep013/#video"}, "mainEntityOfPage": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep013/"}, {"@type": "FAQPage", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep013/#faq", "mainEntity": [{"@type": "Question", "name": "tsrs は TypeScript の8倍速いですか？", "acceptedAnswer": {"@type": "Answer", "text": "この回の Windows の PC では、発表と同じ条件（同じ checker 数、7.0.2 と比べて）で 2.83〜6.04 倍でした。8倍を超えたのは VS Code を --fast で動かしたときの 8.12 倍だけで、--fast は checker の数を増やす別の設定です。7.1 beta と比べると、同じ checker 数で 2.20〜3.51 倍でした。"}}, {"@type": "Question", "name": "tsrs は本家の TypeScript と同じ答えを出しますか？", "acceptedAnswer": {"@type": "Answer", "text": "VS Code、webpack、t3code server、MUI docs の4つでは、7.1 beta と tsrs の標準出力はバイト単位で同じで、終了コードも同じでした。VS Code と webpack の出力ファイル（--checkers 4）も同じでした。4つと20問の範囲の結果で、適合テスト全部を手元で動かしてはいません。"}}, {"@type": "Question", "name": "tsrs --fast も同じ答えになりますか？", "acceptedAnswer": {"@type": "Answer", "text": "この4つの標準出力は同じでした。ただし公式の USAGE.md には、--fast は既知のケースで診断の増減や位置・文言の変化、終了コードの変化があると書かれていて、ほかのプロジェクトでも同じとは言えません。出力ファイルは --fast では比べていません。"}}, {"@type": "Question", "name": "メモリは70%減りますか？", "acceptedAnswer": {"@type": "Answer", "text": "7.0.2 と比べたワーキングセットのピークで、70%以上減ったのは MUI docs の 80% だけでした（VS Code 62%、webpack 58%、t3code 62%）。7.1 beta と比べると 42〜51% 減です。Windows に確保した量（コミット）で見ると、7.1 beta より webpack で 13% 増え、ほかは 15〜26% 減でした。"}}, {"@type": "Question", "name": "Windows や日本語の環境で違いはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "20問のうち15問は一致し、5問が違いました。--locale ja でもメッセージは英語のまま、--watch・--init・--showConfig は未対応で終了コード5、tsconfig も引数もないときは使い方1行だけです。5つとも公式の DEFAULTS.md に書かれていました。日本語のファイル名や Shift_JIS のファイル、260文字を超えるパスなどは一致しました。"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/"}, {"@type": "ListItem", "position": 2, "name": "第13回", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep013/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0f1724; --bg2: #152033; --panel: #1b2940; --line: #2a3b57; --text: #eef3fb; --muted: #9fb0c8; --accent: #ffb547; --blue: #4fb3ff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "BIZ UDPGothic", "Yu Gothic UI", "Hiragino Sans", sans-serif; line-height: 1.85; }
+  a { color: var(--blue); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  header.top { border-bottom: 1px solid var(--line); background: rgba(15,23,36,.9); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+  header.top .wrap { max-width: 1080px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { color: var(--text); text-decoration: none; font-weight: 700; }
+  .brand span { color: var(--accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: 999px; font-weight: 700; text-decoration: none; white-space: nowrap; line-height: 1.2; }
+  .btn.sub { background: #ff3b3b; color: #fff; box-shadow: 0 8px 24px rgba(255,59,59,.3); }
+  .btn.ghost { border: 2px solid var(--line); color: var(--text); }
+  .btn.small { height: 36px; padding: 0 16px; font-size: 14px; }
+  .yt { width: 22px; height: 16px; background: #fff; border-radius: 4px; position: relative; flex: none; display: inline-block; }
+  .yt:after { content: ""; position: absolute; left: 8px; top: 4px; border-left: 8px solid #ff3b3b; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  nav.crumb { font-size: 13px; color: var(--muted); padding: 18px 0 0; }
+  nav.crumb a { color: var(--muted); }
+  article { padding: 18px 0 56px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--muted); font-size: 14px; }
+  .no { color: var(--accent); font-weight: 700; }
+  .tag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: rgba(79,179,255,.15); color: var(--blue); }
+  h1 { font-size: clamp(24px, 3.6vw, 34px); line-height: 1.45; margin: 10px 0 16px; }
+  .lead { color: #d7e0ee; font-size: 17px; }
+  .thumb { position: relative; display: block; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #0b111c; margin: 24px 0 14px; border: 1px solid var(--line); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb .play { position: absolute; right: 14px; bottom: 14px; width: 64px; height: 44px; border-radius: 12px; background: rgba(255,59,59,.92); }
+  .thumb .play:after { content: ""; position: absolute; left: 25px; top: 12px; border-left: 17px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .watch { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
+  h2 { font-size: 21px; margin: 40px 0 12px; padding-left: 12px; border-left: 4px solid var(--accent); line-height: 1.5; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 400; width: 34%; }
+  td { color: #e6edf7; }
+  ul { padding-left: 1.3em; }
+  li { margin: 6px 0; color: #d7e0ee; }
+  .limits { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; color: var(--muted); font-size: 14px; }
+  .limits li { color: var(--muted); }
+  .related { list-style: none; padding: 0; }
+  .related li { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 8px 0; }
+  .related .src { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; margin-right: 8px; }
+  .related small { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px; margin: 10px 0; }
+  summary { cursor: pointer; font-weight: 700; }
+  details p { margin-top: 8px; color: #d7e0ee; }
+  .pager { display: flex; justify-content: space-between; gap: 14px; margin-top: 44px; font-size: 14px; }
+  .pager a { flex: 1; display: block; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; color: var(--text); text-decoration: none; }
+  .pager a small { display: block; color: var(--muted); }
+  .pager .next { text-align: right; }
+  .cta { margin-top: 44px; text-align: center; background: linear-gradient(135deg, #1b2940, #20304d); border: 1px solid var(--line); border-radius: 18px; padding: 28px 20px; }
+  .cta p { color: var(--muted); margin: 6px 0 18px; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 26px; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  @media (max-width: 560px) { th { width: 40%; } .pager { flex-direction: column; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../../">全自動<span>AI</span>テックラボ</a>
+  <a class="btn sub small" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>登録</a>
+</div></header>
+<div class="wrap">
+  <nav class="crumb" aria-label="パンくずリスト"><a href="../../">トップ</a> ／ <a href="../../#videos">動画</a> ／ 第13回</nav>
+  <article>
+    <div class="meta"><span class="no">第13回</span><span class="tag">Web開発ツール</span><span>公開：<time datetime="2026-11-04">2026年11月4日</time></span><span>動画 9分58秒</span></div>
+    <h1>tsrs 0.20.1 を Windows の実機で：同じ checker 数で TypeScript 7.0.2 の 2.8〜6.0 倍。8倍を超えたのは --fast の VS Code（8.12倍）だけ。エラー出力は 7.1 beta と4プロジェクトでバイト単位で同じ</h1>
+    <p class="lead">AI が Rust に移植した TypeScript コンパイラー tsrs 0.20.1 を、Windows の PC で TypeScript 7.0.2・7.1 beta と比べました。発表の「同じ checker 数で最大8倍速く、メモリ約70%減」が Windows で出るかと、公式の4プロジェクトで本家と同じ答えを出すか、Windows・日本語の20問でどこが違うかを見ています。</p>
+    <a class="thumb" href="https://www.youtube.com/watch?v=ZCtb6WgidN8" target="_blank" rel="noopener" aria-label="YouTube で動画を見る"><img src="https://i.ytimg.com/vi/ZCtb6WgidN8/maxresdefault.jpg" alt="第13回のサムネイル" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/ZCtb6WgidN8/hqdefault.jpg'}"><span class="play"></span></a>
+    <div class="watch"><a class="btn sub" href="https://www.youtube.com/watch?v=ZCtb6WgidN8" target="_blank" rel="noopener"><span class="yt"></span>YouTube で見る</a><a class="btn ghost" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener">チャンネル登録</a></div>
+    <p class="note">YouTube のタイトル：tsrsをWindowsで実測：AIが移植したTypeScript、本当に8倍速い？本物と同じ答え？｜第13回</p>
+
+    <h2>この回で試したこと</h2>
+    <table><tr><th>PC</th><td>Intel Core Ultra 7 265K（20スレッド）、メモリ約31GB、Windows 11 26H2、Node 24.14.0</td></tr><tr><th>道具</th><td>tsrs 0.20.1-ts7.1.0-beta、typescript 7.0.2・7.1.0-beta（いずれも Apache-2.0）。node のラッパーは通さず exe を直接呼んだ</td></tr><tr><th>対象</th><td>公式の bench/projects.json のコミットの VS Code、webpack、t3code server、MUI docs</td></tr><tr><th>速さの測り方</th><td>5回の中央値。-p &lt;対象&gt; --noEmit --incremental false --pretty false --checkers 4（--fast だけ --checkers なし）。交互に、1周のウォームアップのあと</td></tr><tr><th>発表との違い</th><td>発表の値は tsrs 0.18.0 のもの。今回は 0.20.1 を Windows で測った。発表の図の値は解説記事に写されたもので、図そのものの数字は確かめていない</td></tr><tr><th>測ったときの PC の状態</th><td>ほかのアプリが動いている状態（各回の前の PC 全体の CPU は多くが30%台、最大約60%）。Defender のリアルタイム保護は有効</td></tr><tr><th>公式の入れ方から変えた点</th><td>MUI docs は pnpm が Node 24.15 以上を求めて止まったので、--config.engine-strict=false で入れ直した。入れるときは --ignore-scripts</td></tr><tr><th>作業フォルダの外にできたもの</th><td>%LOCALAPPDATA%\Yarn\Cache（Yarn のキャッシュは全体で 866MB。今回の増分は分けて測っていない）、%LOCALAPPDATA%\npm-cache</td></tr></table>
+
+    <h2>結果（実測）</h2>
+    <table><tr><th>型チェックの時間（7.0.2／7.1 beta／tsrs／tsrs --fast、秒）</th><td>VS Code 13.091／9.403／3.730／1.613、webpack 1.386／1.078／0.490／0.302、t3code server 15.887／11.044／3.149／2.236、MUI docs 16.687／6.685／2.763／2.236</td></tr><tr><th>同じ checker 数で 7.0.2 と比べた倍率</th><td>VS Code 3.51、webpack 2.83、t3code server 5.05、MUI docs 6.04（発表の値は順に 3.83、3.96、8.12、8.09。tsrs 0.18.0）</td></tr><tr><th>同じ checker 数で 7.1 beta と比べた倍率</th><td>VS Code 2.52、webpack 2.20、t3code server 3.51、MUI docs 2.42</td></tr><tr><th>--fast の倍率（7.0.2 比／7.1 beta 比）</th><td>VS Code 8.12／5.83、webpack 4.59／3.57、t3code server 7.10／4.94、MUI docs 7.46／2.99</td></tr><tr><th>checker の数を変えた結果（VS Code、3回の中央値。結果を見てから足した測り方）</th><td>7.1 beta と tsrs の倍率は checker 1 で 2.20、2 で 2.33、4 で 2.51、8 で 2.57、16 で 2.68。tsrs は checker 16 で 1.993秒、--fast は 1.613秒</td></tr><tr><th>メモリ：ワーキングセットのピーク（7.0.2／7.1 beta／tsrs、MiB）</th><td>VS Code 7775／5464／2976、webpack 1198／873／502、t3code 6244／4486／2345、MUI docs 7908／3177／1571。tsrs は 7.0.2 より順に 62%・58%・62%・80% 減、7.1 beta より 46%・42%・48%・51% 減</td></tr><tr><th>メモリ：コミットのピーク（7.0.2／7.1 beta／tsrs、MiB。結果を見てから取り上げた物差し）</th><td>VS Code 7832／5515／4697、webpack 1233／908／1029、t3code 6296／4532／3512、MUI docs 7959／3217／2393。tsrs は 7.0.2 より 17〜70% 減、7.1 beta より webpack で 13% 増、ほかは 15〜26% 減</td></tr><tr><th>同じ答えか（標準出力）</th><td>7.1 beta と tsrs、7.1 beta と tsrs --fast は4つすべてバイト単位で同じ。VS Code エラー371個・69,503バイト、webpack 840個・155,752バイト、t3code 6個・2,307バイト、MUI docs 0個・0バイト（空どうしの一致）。終了コードも同じ</td></tr><tr><th>7.0.2 の答え</th><td>VS Code 359個、webpack 848個、t3code 5個。エラーありの終了コードは 1 で、7.1 beta・tsrs の 2 と違った</td></tr><tr><th>出力されるファイル（--checkers 4）</th><td>VS Code 9,400個・136,057,750バイト、webpack 954個・12,868,035バイトで、全ファイルのバイト列が同じ。--fast では比べていない</td></tr><tr><th>Windows・日本語の20問</th><td>一致15・違い5。違いは --locale ja（tsrs は英語のまま）、--watch・--init・--showConfig（tsrs は未対応、終了コード5）、tsconfig も引数もないとき（7.1 は全部のヘルプ、tsrs は使い方1行）。5つとも公式の DEFAULTS.md に書かれていた</td></tr><tr><th>20問で一致した例</th><td>日本語のファイル名・変数名、絵文字・𠮷のあとの列番号、BOM と CRLF、ジャンクション経由、260文字を超えるパス、Shift_JIS のファイル</td></tr><tr><th>ウォームアップ</th><td>tsrs の最初の1回（VS Code）は 11.8秒。2回目からは 3.6秒台</td></tr></table>
+
+    <h2>わかったこと</h2>
+    <ul><li>発表の条件（同じ checker 数、7.0.2 と比べて）での最大は MUI docs の 6.04 倍で、8倍には届かなかった</li><li>8倍を超えたのは --fast の VS Code（8.12倍）だけ。--fast は checker の数を増やす別の設定なので、発表の条件ではない</li><li>エラーの出力は、7.1 beta と tsrs で4プロジェクトともバイト単位で同じだった。エラーの数は公式の RESULTS.md の 371・840・6・0 と同じ</li><li>7.0.2 は 7.1 beta・tsrs と別の答えを出した（VS Code 359個、webpack 848個、t3code 5個）。「7.0 より8倍」は、版も答えも違うものとの比べになる</li><li>メモリ70%減に届いたのは、7.0.2 比のワーキングセットで MUI docs の 80% だけ（ほかは 62%・58%・62%）。7.1 beta 比のコミットでは webpack が 13% 増えていた</li><li>Windows・日本語の20問の違い5つは、すべて公式の文書に書かれていた（--locale ja、--watch、--init、--showConfig、引数なしのときの表示）</li></ul>
+
+    <h2>結果の範囲</h2>
+    <div class="limits"><ul><li>1台の PC の結果です。ほかのアプリが動いている状態で測りました</li><li>発表の値（解説記事が写したブログの図の値）は tsrs 0.18.0 のもので、今回の 0.20.1 とは版が違います。図そのものの数字は確かめていません。公式の peak RSS は macOS／Linux の値で、Windows のワーキングセットと同じものではありません</li><li>結果を見てから足したもの：checker の数を変える測り方（test_plan_add1）、MUI docs・t3code server（test_plan_add2）、コミットを取り上げること、問04・13・17 の解き直し（test_plan_add3。レビュー1回目の指摘）、webpack の出力ファイルの比較（試し方に書いていたのは VS Code だけでした）</li><li>問04・13・17 は問題の tsconfig に rootDir を書かなかったので TS5011 のエラーが両方で出ました（こちらの書き方のせい）。最初の結果は残し、rootDir を足して解き直した3問も一致でした</li><li>20問は制作担当が選んだ1回ずつの試験です。これだけで「同じ」と一般化しません。適合テスト全部を手元で動かしてはいません</li><li>--fast は、公式の USAGE.md に、既知のケースで診断の増減・位置や文言の変化・終了コードの変化があると書かれています。この4つでは同じでしたが、ほかでも同じとは言えません</li><li>--fast の checker の数は文書の式で16ですが、実際に16になったかは確かめていません。--fast のどの設定が効いたかも分けて測っていません</li><li>エラーは、公式の測り方（--ignore-scripts で入れる）で型の部品が足りないなどのために出るものです。プロジェクトの不具合という意味ではありません</li><li>コミットが大きい理由は調べていません。Windows では --fast の省メモリの一部が働かない（USAGE.md）とありますが、これがこの差の原因かは確かめていません。ウォームアップの最初の1回が遅い理由も確かめていません</li><li>AI が移植したという話は The New Stack・InfoQ の記事の要約で、作者本人の記事は読んでいません</li><li>動画の長さのため、checker の数を変えた結果は動画から外し、概要欄とこのページに残しました</li></ul></div>
+
+    <h2>よくある質問</h2>
+    <details open><summary>tsrs は TypeScript の8倍速いですか？</summary><p>この回の Windows の PC では、発表と同じ条件（同じ checker 数、7.0.2 と比べて）で 2.83〜6.04 倍でした。8倍を超えたのは VS Code を --fast で動かしたときの 8.12 倍だけで、--fast は checker の数を増やす別の設定です。7.1 beta と比べると、同じ checker 数で 2.20〜3.51 倍でした。</p></details><details open><summary>tsrs は本家の TypeScript と同じ答えを出しますか？</summary><p>VS Code、webpack、t3code server、MUI docs の4つでは、7.1 beta と tsrs の標準出力はバイト単位で同じで、終了コードも同じでした。VS Code と webpack の出力ファイル（--checkers 4）も同じでした。4つと20問の範囲の結果で、適合テスト全部を手元で動かしてはいません。</p></details><details open><summary>tsrs --fast も同じ答えになりますか？</summary><p>この4つの標準出力は同じでした。ただし公式の USAGE.md には、--fast は既知のケースで診断の増減や位置・文言の変化、終了コードの変化があると書かれていて、ほかのプロジェクトでも同じとは言えません。出力ファイルは --fast では比べていません。</p></details><details open><summary>メモリは70%減りますか？</summary><p>7.0.2 と比べたワーキングセットのピークで、70%以上減ったのは MUI docs の 80% だけでした（VS Code 62%、webpack 58%、t3code 62%）。7.1 beta と比べると 42〜51% 減です。Windows に確保した量（コミット）で見ると、7.1 beta より webpack で 13% 増え、ほかは 15〜26% 減でした。</p></details><details open><summary>Windows や日本語の環境で違いはありますか？</summary><p>20問のうち15問は一致し、5問が違いました。--locale ja でもメッセージは英語のまま、--watch・--init・--showConfig は未対応で終了コード5、tsconfig も引数もないときは使い方1行だけです。5つとも公式の DEFAULTS.md に書かれていました。日本語のファイル名や Shift_JIS のファイル、260文字を超えるパスなどは一致しました。</p></details>
+
+    
+    <div class="pager"><a href="../ep012/"><small>← 前の回</small>第12回</a><span></span></div>
+
+    <div class="cta">
+      <b>次の検証も、YouTube で公開しています</b>
+      <p>月・水・金の18:00に、話題の技術を手元のゲーミングPCで試した結果を出しています。</p>
+      <a class="btn sub" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>チャンネル登録する</a>
+    </div>
+    <p class="note">このページと動画は、AI（Anthropic の Claude）が検証の記録をもとに作り、人間の運営が公開を承認しています。数値は記録（ログ）の値です。音声：VOICEVOX:春日部つむぎ ／ 映像の一部：Google Veo（AI生成）</p>
+  </article>
+</div>
+<footer><div class="wrap">© 全自動AIテックラボ（個人運営）　<a href="../../">トップ</a>　<a href="../../privacy.html">プライバシーポリシー</a>　<a href="https://www.youtube.com/@auto-ai-techlab" target="_blank" rel="noopener">YouTube チャンネル</a></div></footer>
+</body>
+</html>
