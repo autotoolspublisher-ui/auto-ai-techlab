@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WP0CG915CL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WP0CG915CL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LFM3-1.7B を試す：約1GBのAIは日本語の指示どおりに書ける？ 形の決まり20問×3回で、考えるオン53/60（日本語の答えに限ると48）、オフ35/60、第2回の27Bは56/60｜第17回｜全自動AIテックラボ</title>
+<meta name="description" content="Liquid AI の小さなモデル LFM3-1.7B（Q4_K_M、1,099,627,808 バイト）を、RTX 5070 Ti（16GB）の PC で llama.cpp を使って試しました。「箇条書き3行」「漢字を使わない」「J…">
+<link rel="canonical" href="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep018/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="全自動AIテックラボ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LFM3-1.7B を試す：約1GBのAIは日本語の指示どおりに書ける？ 形の決まり20問×3回で、考えるオン53/60（日本語の答えに限ると48）、オフ35/60、第2回の27Bは56/60">
+<meta property="og:description" content="Liquid AI の小さなモデル LFM3-1.7B（Q4_K_M、1,099,627,808 バイト）を、RTX 5070 Ti（16GB）の PC で llama.cpp を使って試しました。「箇条書き3行」「漢字を使わない」「J…">
+<meta property="og:url" content="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep018/">
+<meta property="og:image" content="https://i.ytimg.com/vi/Oqb7kvqtXGw/maxresdefault.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LFM3-1.7B を試す：約1GBのAIは日本語の指示どおりに書ける？ 形の決まり20問×3回で、考えるオン53/60（日本語の答えに限ると48）、オフ35/60、第2回の27Bは56/60">
+<meta name="twitter:description" content="Liquid AI の小さなモデル LFM3-1.7B（Q4_K_M、1,099,627,808 バイト）を、RTX 5070 Ti（16GB）の PC で llama.cpp を使って試しました。「箇条書き3行」「漢字を使わない」「J…">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/Oqb7kvqtXGw/maxresdefault.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org", "name": "全自動AIテックラボ", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/", "logo": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/favicon.svg", "sameAs": ["https://www.youtube.com/@auto-ai-techlab"], "email": "autotoolspublisher@gmail.com", "description": "話題の技術（AIモデル・開発ツール・アプリ）を手元のゲーミングPCで実際に動かして確かめるYouTubeチャンネル。企画から編集までAI（Claude）が担当し、公開は人間が承認する。"}, {"@type": "VideoObject", "name": "LFM3-1.7Bを日本語で試す：1GBのAIは指示どおりに書ける？ 考えるオン・オフで20問｜第17回", "description": "Liquid AI の小さなモデル LFM3-1.7B（Q4_K_M、1,099,627,808 バイト）を、RTX 5070 Ti（16GB）の PC で llama.cpp を使って試しました。「箇条書き3行」「漢字を使わない」「JSONだけ」など、日本語の形の決まりを20問用意し、各3回（seed 1〜3）、判定はプログラムで機械的に行いました。考えるオン・オフと、第2回の Ternary-Bonsai-2-27B を比べています。試し方と判定のプログラムは結果を見る前に保存しました。", "thumbnailUrl": ["https://i.ytimg.com/vi/Oqb7kvqtXGw/maxresdefault.jpg", "https://i.ytimg.com/vi/Oqb7kvqtXGw/hqdefault.jpg"], "uploadDate": "2026-11-13T09:00:11Z", "contentUrl": "https://www.youtube.com/watch?v=Oqb7kvqtXGw", "embedUrl": "https://www.youtube.com/embed/Oqb7kvqtXGw", "inLanguage": "ja", "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "duration": "PT8M16S", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep018/#video"}, {"@type": "Article", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep018/#article", "headline": "LFM3-1.7B を試す：約1GBのAIは日本語の指示どおりに書ける？ 形の決まり20問×3回で、考えるオン53/60（日本語の答えに限ると48）、オフ35/60、第2回の27Bは56/60", "description": "Liquid AI の小さなモデル LFM3-1.7B（Q4_K_M、1,099,627,808 バイト）を、RTX 5070 Ti（16GB）の PC で llama.cpp を使って試しました。「箇条書き3行」「漢字を使わない」「JSONだけ」など、日本語の形の決まりを20問用意し、各3回（seed 1〜3）、判定はプログラムで機械的に行いました。考えるオン・オフと、第2回の Ternary-Bonsai-2-27B を比べています。試し方と判定のプログラムは結果を見る前に保存しました。", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep018/", "datePublished": "2026-11-13T18:00:11+09:00", "dateModified": "2026-11-13T18:24:05.357921+09:00", "inLanguage": "ja", "image": "https://i.ytimg.com/vi/Oqb7kvqtXGw/maxresdefault.jpg", "author": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "about": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep018/#video"}, "mainEntityOfPage": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep018/"}, {"@type": "FAQPage", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep018/#faq", "mainEntity": [{"@type": "Question", "name": "LFM3-1.7B は日本語の指示どおりに書けますか？", "acceptedAnswer": {"@type": "Answer", "text": "日本語の形の決まり20問×3回で、考えるオンは 53/60 が決まりどおりでした。ただし英語で答えた4回と空の答え1回が入っていて、日本語の答えに限ると 48/60 です。考えるオフは 35/60、比べた27Bのモデルは 56/60 でした。"}}, {"@type": "Question", "name": "考えるオフにするとどうなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "1問の時間の中央値は 3.99秒から 0.29秒に短くなりましたが、決まりどおりは 35/60 に下がりました。段落の間に「空行」という文字を書くなど、指示の言葉を答えに書いてしまうことがありました。"}}, {"@type": "Question", "name": "どのくらいのメモリで動きますか？", "acceptedAnswer": {"@type": "Answer", "text": "モデルのファイルは 1,099,627,808 バイトです。nvidia-smi の使用量は、読み込み後 3,160MiB でしたが、これは GPU 全体の値で、ほかのアプリの分も入っています。"}}, {"@type": "Question", "name": "GPU がなくても動きますか？", "acceptedAnswer": {"@type": "Answer", "text": "CPU だけ（-ngl 0）でも動き、考えるオフ・最大256トークンで毎秒 50.1 トークン（中央値）でした。GPU では毎秒 347.2 トークンでした。"}}, {"@type": "Question", "name": "答えの中身は正しいですか？", "acceptedAnswer": {"@type": "Answer", "text": "中身の正しさは採点していません。富士山の問いでは、考えるオンが標高を「4,096メートル」などと書いた回がありました（正しくは 3,776メートル）。"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/"}, {"@type": "ListItem", "position": 2, "name": "第17回", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep018/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0f1724; --bg2: #152033; --panel: #1b2940; --line: #2a3b57; --text: #eef3fb; --muted: #9fb0c8; --accent: #ffb547; --blue: #4fb3ff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "BIZ UDPGothic", "Yu Gothic UI", "Hiragino Sans", sans-serif; line-height: 1.85; }
+  a { color: var(--blue); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  header.top { border-bottom: 1px solid var(--line); background: rgba(15,23,36,.9); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+  header.top .wrap { max-width: 1080px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { color: var(--text); text-decoration: none; font-weight: 700; }
+  .brand span { color: var(--accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: 999px; font-weight: 700; text-decoration: none; white-space: nowrap; line-height: 1.2; }
+  .btn.sub { background: #ff3b3b; color: #fff; box-shadow: 0 8px 24px rgba(255,59,59,.3); }
+  .btn.ghost { border: 2px solid var(--line); color: var(--text); }
+  .btn.small { height: 36px; padding: 0 16px; font-size: 14px; }
+  .yt { width: 22px; height: 16px; background: #fff; border-radius: 4px; position: relative; flex: none; display: inline-block; }
+  .yt:after { content: ""; position: absolute; left: 8px; top: 4px; border-left: 8px solid #ff3b3b; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  nav.crumb { font-size: 13px; color: var(--muted); padding: 18px 0 0; }
+  nav.crumb a { color: var(--muted); }
+  article { padding: 18px 0 56px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--muted); font-size: 14px; }
+  .no { color: var(--accent); font-weight: 700; }
+  .tag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: rgba(79,179,255,.15); color: var(--blue); }
+  h1 { font-size: clamp(24px, 3.6vw, 34px); line-height: 1.45; margin: 10px 0 16px; }
+  .lead { color: #d7e0ee; font-size: 17px; }
+  .thumb { position: relative; display: block; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #0b111c; margin: 24px 0 14px; border: 1px solid var(--line); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb .play { position: absolute; right: 14px; bottom: 14px; width: 64px; height: 44px; border-radius: 12px; background: rgba(255,59,59,.92); }
+  .thumb .play:after { content: ""; position: absolute; left: 25px; top: 12px; border-left: 17px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .watch { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
+  h2 { font-size: 21px; margin: 40px 0 12px; padding-left: 12px; border-left: 4px solid var(--accent); line-height: 1.5; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 400; width: 34%; }
+  td { color: #e6edf7; }
+  ul { padding-left: 1.3em; }
+  li { margin: 6px 0; color: #d7e0ee; }
+  .limits { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; color: var(--muted); font-size: 14px; }
+  .limits li { color: var(--muted); }
+  .related { list-style: none; padding: 0; }
+  .related li { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 8px 0; }
+  .related .src { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; margin-right: 8px; }
+  .related small { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px; margin: 10px 0; }
+  summary { cursor: pointer; font-weight: 700; }
+  details p { margin-top: 8px; color: #d7e0ee; }
+  .pager { display: flex; justify-content: space-between; gap: 14px; margin-top: 44px; font-size: 14px; }
+  .pager a { flex: 1; display: block; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; color: var(--text); text-decoration: none; }
+  .pager a small { display: block; color: var(--muted); }
+  .pager .next { text-align: right; }
+  .cta { margin-top: 44px; text-align: center; background: linear-gradient(135deg, #1b2940, #20304d); border: 1px solid var(--line); border-radius: 18px; padding: 28px 20px; }
+  .cta p { color: var(--muted); margin: 6px 0 18px; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 26px; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  @media (max-width: 560px) { th { width: 40%; } .pager { flex-direction: column; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../../">全自動<span>AI</span>テックラボ</a>
+  <a class="btn sub small" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>登録</a>
+</div></header>
+<div class="wrap">
+  <nav class="crumb" aria-label="パンくずリスト"><a href="../../">トップ</a> ／ <a href="../../#videos">動画</a> ／ 第17回</nav>
+  <article>
+    <div class="meta"><span class="no">第17回</span><span class="tag">AIモデル</span><span>公開：<time datetime="2026-11-13">2026年11月13日</time></span><span>動画 8分16秒</span></div>
+    <h1>LFM3-1.7B を試す：約1GBのAIは日本語の指示どおりに書ける？ 形の決まり20問×3回で、考えるオン53/60（日本語の答えに限ると48）、オフ35/60、第2回の27Bは56/60</h1>
+    <p class="lead">Liquid AI の小さなモデル LFM3-1.7B（Q4_K_M、1,099,627,808 バイト）を、RTX 5070 Ti（16GB）の PC で llama.cpp を使って試しました。「箇条書き3行」「漢字を使わない」「JSONだけ」など、日本語の形の決まりを20問用意し、各3回（seed 1〜3）、判定はプログラムで機械的に行いました。考えるオン・オフと、第2回の Ternary-Bonsai-2-27B を比べています。試し方と判定のプログラムは結果を見る前に保存しました。</p>
+    <a class="thumb" href="https://www.youtube.com/watch?v=Oqb7kvqtXGw" target="_blank" rel="noopener" aria-label="YouTube で動画を見る"><img src="https://i.ytimg.com/vi/Oqb7kvqtXGw/maxresdefault.jpg" alt="第17回のサムネイル" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/Oqb7kvqtXGw/hqdefault.jpg'}"><span class="play"></span></a>
+    <div class="watch"><a class="btn sub" href="https://www.youtube.com/watch?v=Oqb7kvqtXGw" target="_blank" rel="noopener"><span class="yt"></span>YouTube で見る</a><a class="btn ghost" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener">チャンネル登録</a></div>
+    <p class="note">YouTube のタイトル：LFM3-1.7Bを日本語で試す：1GBのAIは指示どおりに書ける？ 考えるオン・オフで20問｜第17回</p>
+
+    <h2>この回で試したこと</h2>
+    <table><tr><th>PC</th><td>Windows 11、RTX 5070 Ti（16GB）</td></tr><tr><th>実行</th><td>llama.cpp b12237（公式の Windows CUDA 13.5 版、commit 20c2e9665）</td></tr><tr><th>モデル</th><td>LiquidAI 公式の LFM3-1.7B-Q4_K_M.gguf（1,099,627,808 バイト）。比べは第2回の Ternary-Bonsai-2-27B-PQ2_0.gguf（7.21GB）と PrismML-Eng 版の llama-server</td></tr><tr><th>ダウンロード</th><td>llama.cpp 本体 171MB＋CUDA の部品 426MB＋モデル 1.10GB（合計 約1.7GB）。ログイン・トークン・規約の手続きなし</td></tr><tr><th>条件</th><td>A LFM3 考えるオン／B LFM3 考えるオフ／C Bonsai 27B（考えるは既定＝オン）</td></tr><tr><th>設定</th><td>公式の推奨（一般）temperature 0.1・top_k 50・repeat_penalty 1.1、最大 4096 トークン。打ち切り（180秒）は 0回</td></tr><tr><th>試し方</th><td>20問×3回＝60回。判定は tests.py の関数で機械的に。試し方と tests.py は結果を見る前（9:13〜9:14）に保存</td></tr></table>
+
+    <h2>結果（実測）</h2>
+    <table><tr><th>A 考えるオン</th><td>決まりどおり 53/60（うち日本語の答え 48/60）。1問の時間の中央値 3.99秒、60回の合計 305.1秒、書いたトークン 91,532</td></tr><tr><th>B 考えるオフ</th><td>決まりどおり 35/60（日本語の答え 35/60）。1問の時間の中央値 0.29秒、合計 22.4秒、書いたトークン 6,292</td></tr><tr><th>C Bonsai 27B</th><td>決まりどおり 56/60（日本語の答え 56/60）。1問の時間の中央値 4.68秒、合計 706.2秒、書いたトークン 51,062</td></tr><tr><th>1秒に書く速さ（各回の中央値）</th><td>A 304.5、B 310.6、C 74.9 トークン</td></tr><tr><th>速さ（q13 を考えるオフ・最大256トークンで3回）</th><td>GPU（-ngl 99）の中央値 347.2 トークン/秒、CPU だけ（-ngl 0）の中央値 50.1 トークン/秒</td></tr><tr><th>GPU のメモリ</th><td>nvidia-smi の使用量は、条件 A の読み込み後 3,160MiB（GPU 全体。ほかのアプリの分を含み、モデルの分だけは分けていない）。-ngl 0 のときも 1,852MiB</td></tr><tr><th>問いごと（A／B／C、3回のうち決まりどおりの回数）</th><td>q01 箇条書き3行 3/2/3、q02 50字以内 2/3/3、q03 です・ますなし 3/0/3、q04 最後の行「以上」 3/3/3、q05 JSONだけ 3/3/3、q06 漢字なし 0/0/1、q07 数字なし 3/0/2、q08 りんご2回 3/0/3、q09 全体を「」 3/0/3、q10 2段落 3/0/3、q11 見出し2つ 3/3/3、q12 英字なし 3/3/3、q13 200字以上 3/1/2、q14 句点なし 3/2/3、q15 番号4行 3/3/3、q16 「結論から言うと」で始める 1/3/3、q17 すべて「？」 3/3/3、q18 5文字以内 3/3/3、q19 3行・各30字 2/0/3、q20 JSON・配列3つ 3/3/3</td></tr></table>
+
+    <h2>わかったこと</h2>
+    <ul><li>考えるオンの「53」には、日本語でない答え4回（q07 の3回、q15 の1回が英語）と、空の答え1回（q03 seed3。判定のプログラムの抜けで通っていた）が入っていた。日本語の答えに限ると 48</li><li>考えるオンの空の答えは4回（q06「漢字を使わない」の3回すべてと q03 seed3）。どれも考えの部分が上限の 4096 トークンに届いて、答えを書く前に止まった</li><li>考えるオンの考えの部分は60回すべて英語だった（英字の数が日本語の文字の数より多い）</li><li>考えるオフは、指示の言葉を答えに書いてしまうことがあった。q10（2段落）は3回とも段落の間に「空行」という文字を書き、q09（かぎかっこで囲む）は「かぎかっこで囲みます。」などと書いた</li><li>決まりは守っても中身が違う答えがあった。q13（富士山を200字以上で）の考えるオンは標高を「4,096メートル」「4,095メートル」と書いた（正しくは 3,776メートル）</li><li>速さは GPU で毎秒 347.2 トークン、CPU だけで毎秒 50.1 トークン（中央値）</li></ul>
+
+    <h2>結果の範囲</h2>
+    <div class="limits"><ul><li>この PC・この20問・各3回（seed 1〜3）・Q4_K_M の結果です</li><li>英語の問いは試していません。メーカーの IFEval（英語・BF16・別の設定）とは別のテストなので、並べて比べられません</li><li>判定は形の決まりだけで、中身の正しさ・自然さは採点していません（富士山の標高は目で見て気づいた例です）</li><li>「日本語で答えたか」の物差しと、q03 の空の答えの扱いは、結果を見てから足しました</li><li>GPU のメモリの値は GPU 全体の使用量で、モデルの分だけは分けていません</li><li>考えるオンの答えを CPU だけで書くと約24秒という値は、書いた量の中央値 1,205.5 トークンを 50.1 で割った計算で、実測ではありません</li></ul></div>
+
+    <h2>よくある質問</h2>
+    <details open><summary>LFM3-1.7B は日本語の指示どおりに書けますか？</summary><p>日本語の形の決まり20問×3回で、考えるオンは 53/60 が決まりどおりでした。ただし英語で答えた4回と空の答え1回が入っていて、日本語の答えに限ると 48/60 です。考えるオフは 35/60、比べた27Bのモデルは 56/60 でした。</p></details><details open><summary>考えるオフにするとどうなりますか？</summary><p>1問の時間の中央値は 3.99秒から 0.29秒に短くなりましたが、決まりどおりは 35/60 に下がりました。段落の間に「空行」という文字を書くなど、指示の言葉を答えに書いてしまうことがありました。</p></details><details open><summary>どのくらいのメモリで動きますか？</summary><p>モデルのファイルは 1,099,627,808 バイトです。nvidia-smi の使用量は、読み込み後 3,160MiB でしたが、これは GPU 全体の値で、ほかのアプリの分も入っています。</p></details><details open><summary>GPU がなくても動きますか？</summary><p>CPU だけ（-ngl 0）でも動き、考えるオフ・最大256トークンで毎秒 50.1 トークン（中央値）でした。GPU では毎秒 347.2 トークンでした。</p></details><details open><summary>答えの中身は正しいですか？</summary><p>中身の正しさは採点していません。富士山の問いでは、考えるオンが標高を「4,096メートル」などと書いた回がありました（正しくは 3,776メートル）。</p></details>
+
+    
+    <div class="pager"><a href="../ep017/"><small>← 前の回</small>第16回</a><span></span></div>
+
+    <div class="cta">
+      <b>次の検証も、YouTube で公開しています</b>
+      <p>月・水・金の18:00に、話題の技術を手元のゲーミングPCで試した結果を出しています。</p>
+      <a class="btn sub" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>チャンネル登録する</a>
+    </div>
+    <p class="note">このページと動画は、AI（Anthropic の Claude）が検証の記録をもとに作り、人間の運営が公開を承認しています。数値は記録（ログ）の値です。音声：VOICEVOX:春日部つむぎ ／ 映像の一部：Google Veo（AI生成）</p>
+  </article>
+</div>
+<footer><div class="wrap">© 全自動AIテックラボ（個人運営）　<a href="../../">トップ</a>　<a href="../../privacy.html">プライバシーポリシー</a>　<a href="https://www.youtube.com/@auto-ai-techlab" target="_blank" rel="noopener">YouTube チャンネル</a></div></footer>
+</body>
+</html>
