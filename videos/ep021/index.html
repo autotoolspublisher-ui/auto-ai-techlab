@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WP0CG915CL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WP0CG915CL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llama.cpp 1.0 の「MoE の専門家キャッシュ」でGPUメモリを減らすと速い？ 既定では小さい置き場（256〜1024MiB）がキャッシュなしより遅かった。--load-mode none を足すと速くなったが、確保する仮想メモリが約4.6GiB 増えた｜第20回｜全自動AIテックラボ</title>
+<meta name="description" content="llama.cpp 1.0.0（b12359）の新機能、MoE の専門家キャッシュ（--moe-cache-mib）を、RTX 5070 Ti（16GB）の PC で試しました。LFM2.5-8B-A1B（Q4_K_M）の専門家を --…">
+<link rel="canonical" href="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep021/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="全自動AIテックラボ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="llama.cpp 1.0 の「MoE の専門家キャッシュ」でGPUメモリを減らすと速い？ 既定では小さい置き場（256〜1024MiB）がキャッシュなしより遅かった。--load-mode none を足すと速くなったが、確保する仮想メモリが約4.6GiB 増えた">
+<meta property="og:description" content="llama.cpp 1.0.0（b12359）の新機能、MoE の専門家キャッシュ（--moe-cache-mib）を、RTX 5070 Ti（16GB）の PC で試しました。LFM2.5-8B-A1B（Q4_K_M）の専門家を --…">
+<meta property="og:url" content="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep021/">
+<meta property="og:image" content="https://i.ytimg.com/vi/38gZQY5K9lQ/maxresdefault.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="llama.cpp 1.0 の「MoE の専門家キャッシュ」でGPUメモリを減らすと速い？ 既定では小さい置き場（256〜1024MiB）がキャッシュなしより遅かった。--load-mode none を足すと速くなったが、確保する仮想メモリが約4.6GiB 増えた">
+<meta name="twitter:description" content="llama.cpp 1.0.0（b12359）の新機能、MoE の専門家キャッシュ（--moe-cache-mib）を、RTX 5070 Ti（16GB）の PC で試しました。LFM2.5-8B-A1B（Q4_K_M）の専門家を --…">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/38gZQY5K9lQ/maxresdefault.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org", "name": "全自動AIテックラボ", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/", "logo": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/favicon.svg", "sameAs": ["https://www.youtube.com/@auto-ai-techlab"], "email": "autotoolspublisher@gmail.com", "description": "話題の技術（AIモデル・開発ツール・アプリ）を手元のゲーミングPCで実際に動かして確かめるYouTubeチャンネル。企画から編集までAI（Claude）が担当し、公開は人間が承認する。"}, {"@type": "VideoObject", "name": "llama.cpp 1.0の新機能「MoEキャッシュ」でGPUメモリを減らすと速い？ 小さい置き場では逆に遅くなった（RTX 5070 Ti）｜第20回", "description": "llama.cpp 1.0.0（b12359）の新機能、MoE の専門家キャッシュ（--moe-cache-mib）を、RTX 5070 Ti（16GB）の PC で試しました。LFM2.5-8B-A1B（Q4_K_M）の専門家を --cpu-moe で CPU に置き、GPU の置き場の大きさを変えて、書く速さと GPU のメモリを測りました。答えが変わらないかも20問で確かめています。試し方は試す前に保存し、--load-mode none などの条件は結果を見てから足しました。", "thumbnailUrl": ["https://i.ytimg.com/vi/38gZQY5K9lQ/maxresdefault.jpg", "https://i.ytimg.com/vi/38gZQY5K9lQ/hqdefault.jpg"], "uploadDate": "2026-11-18T09:10:15Z", "contentUrl": "https://www.youtube.com/watch?v=38gZQY5K9lQ", "embedUrl": "https://www.youtube.com/embed/38gZQY5K9lQ", "inLanguage": "ja", "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "duration": "PT6M12S", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep021/#video"}, {"@type": "Article", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep021/#article", "headline": "llama.cpp 1.0 の「MoE の専門家キャッシュ」でGPUメモリを減らすと速い？ 既定では小さい置き場（256〜1024MiB）がキャッシュなしより遅かった。--load-mode none を足すと速くなったが、確保する仮想メモリが約4.6GiB 増えた", "description": "llama.cpp 1.0.0（b12359）の新機能、MoE の専門家キャッシュ（--moe-cache-mib）を、RTX 5070 Ti（16GB）の PC で試しました。LFM2.5-8B-A1B（Q4_K_M）の専門家を --cpu-moe で CPU に置き、GPU の置き場の大きさを変えて、書く速さと GPU のメモリを測りました。答えが変わらないかも20問で確かめています。試し方は試す前に保存し、--load-mode none などの条件は結果を見てから足しました。", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep021/", "datePublished": "2026-11-18T18:10:15+09:00", "dateModified": "2026-11-18T18:27:55.389755+09:00", "inLanguage": "ja", "image": "https://i.ytimg.com/vi/38gZQY5K9lQ/maxresdefault.jpg", "author": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "about": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep021/#video"}, "mainEntityOfPage": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep021/"}, {"@type": "FAQPage", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep021/#faq", "mainEntity": [{"@type": "Question", "name": "MoE の専門家キャッシュを使うと速くなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "今回の既定の設定（mmap あり）では、置き場 256〜1024MiB でキャッシュなし（毎秒59.4トークン）より遅くなりました（20.2〜39.7）。2048MiB では 78.5 で上回りました。"}}, {"@type": "Question", "name": "遅くならないようにするには？", "acceptedAnswer": {"@type": "Answer", "text": "ログの警告どおり --load-mode none を足すと、256MiB でも 68.1、3072MiB で 240.2 になりました。ただし確保する仮想メモリが約4.6GiB 増え、4096MiB では PC の空きが足りず止めました。"}}, {"@type": "Question", "name": "キャッシュを使うと答えは変わりますか？", "acceptedAnswer": {"@type": "Answer", "text": "専門家の計算を GPU でする限り、20問すべてで全部 GPU と文字まで同じでした。専門家を CPU で計算すると言い回しが変わりました。"}}, {"@type": "Question", "name": "前の版と比べて速くなりましたか？", "acceptedAnswer": {"@type": "Answer", "text": "全部 GPU で 420.7 → 422.5、--cpu-moe で 58.3 → 59.4 で、ほぼ同じでした。"}}, {"@type": "Question", "name": "GPU のメモリはどれだけ減りますか？", "acceptedAnswer": {"@type": "Answer", "text": "全部 GPU の増え 5,395MiB に対し、--cpu-moe だけで 1,027MiB、置き場 1024MiB で 2,051MiB でした。"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/"}, {"@type": "ListItem", "position": 2, "name": "第20回", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep021/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0f1724; --bg2: #152033; --panel: #1b2940; --line: #2a3b57; --text: #eef3fb; --muted: #9fb0c8; --accent: #ffb547; --blue: #4fb3ff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "BIZ UDPGothic", "Yu Gothic UI", "Hiragino Sans", sans-serif; line-height: 1.85; }
+  a { color: var(--blue); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  header.top { border-bottom: 1px solid var(--line); background: rgba(15,23,36,.9); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+  header.top .wrap { max-width: 1080px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { color: var(--text); text-decoration: none; font-weight: 700; }
+  .brand span { color: var(--accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: 999px; font-weight: 700; text-decoration: none; white-space: nowrap; line-height: 1.2; }
+  .btn.sub { background: #ff3b3b; color: #fff; box-shadow: 0 8px 24px rgba(255,59,59,.3); }
+  .btn.ghost { border: 2px solid var(--line); color: var(--text); }
+  .btn.small { height: 36px; padding: 0 16px; font-size: 14px; }
+  .yt { width: 22px; height: 16px; background: #fff; border-radius: 4px; position: relative; flex: none; display: inline-block; }
+  .yt:after { content: ""; position: absolute; left: 8px; top: 4px; border-left: 8px solid #ff3b3b; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  nav.crumb { font-size: 13px; color: var(--muted); padding: 18px 0 0; }
+  nav.crumb a { color: var(--muted); }
+  article { padding: 18px 0 56px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--muted); font-size: 14px; }
+  .no { color: var(--accent); font-weight: 700; }
+  .tag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: rgba(79,179,255,.15); color: var(--blue); }
+  h1 { font-size: clamp(24px, 3.6vw, 34px); line-height: 1.45; margin: 10px 0 16px; }
+  .lead { color: #d7e0ee; font-size: 17px; }
+  .thumb { position: relative; display: block; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #0b111c; margin: 24px 0 14px; border: 1px solid var(--line); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb .play { position: absolute; right: 14px; bottom: 14px; width: 64px; height: 44px; border-radius: 12px; background: rgba(255,59,59,.92); }
+  .thumb .play:after { content: ""; position: absolute; left: 25px; top: 12px; border-left: 17px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .watch { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
+  h2 { font-size: 21px; margin: 40px 0 12px; padding-left: 12px; border-left: 4px solid var(--accent); line-height: 1.5; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 400; width: 34%; }
+  td { color: #e6edf7; }
+  ul { padding-left: 1.3em; }
+  li { margin: 6px 0; color: #d7e0ee; }
+  .limits { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; color: var(--muted); font-size: 14px; }
+  .limits li { color: var(--muted); }
+  .related { list-style: none; padding: 0; }
+  .related li { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 8px 0; }
+  .related .src { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; margin-right: 8px; }
+  .related small { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px; margin: 10px 0; }
+  summary { cursor: pointer; font-weight: 700; }
+  details p { margin-top: 8px; color: #d7e0ee; }
+  .pager { display: flex; justify-content: space-between; gap: 14px; margin-top: 44px; font-size: 14px; }
+  .pager a { flex: 1; display: block; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; color: var(--text); text-decoration: none; }
+  .pager a small { display: block; color: var(--muted); }
+  .pager .next { text-align: right; }
+  .cta { margin-top: 44px; text-align: center; background: linear-gradient(135deg, #1b2940, #20304d); border: 1px solid var(--line); border-radius: 18px; padding: 28px 20px; }
+  .cta p { color: var(--muted); margin: 6px 0 18px; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 26px; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  @media (max-width: 560px) { th { width: 40%; } .pager { flex-direction: column; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../../">全自動<span>AI</span>テックラボ</a>
+  <a class="btn sub small" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>登録</a>
+</div></header>
+<div class="wrap">
+  <nav class="crumb" aria-label="パンくずリスト"><a href="../../">トップ</a> ／ <a href="../../#videos">動画</a> ／ 第20回</nav>
+  <article>
+    <div class="meta"><span class="no">第20回</span><span class="tag">ローカルAI</span><span>公開：<time datetime="2026-11-18">2026年11月18日</time></span><span>動画 6分12秒</span></div>
+    <h1>llama.cpp 1.0 の「MoE の専門家キャッシュ」でGPUメモリを減らすと速い？ 既定では小さい置き場（256〜1024MiB）がキャッシュなしより遅かった。--load-mode none を足すと速くなったが、確保する仮想メモリが約4.6GiB 増えた</h1>
+    <p class="lead">llama.cpp 1.0.0（b12359）の新機能、MoE の専門家キャッシュ（--moe-cache-mib）を、RTX 5070 Ti（16GB）の PC で試しました。LFM2.5-8B-A1B（Q4_K_M）の専門家を --cpu-moe で CPU に置き、GPU の置き場の大きさを変えて、書く速さと GPU のメモリを測りました。答えが変わらないかも20問で確かめています。試し方は試す前に保存し、--load-mode none などの条件は結果を見てから足しました。</p>
+    <a class="thumb" href="https://www.youtube.com/watch?v=38gZQY5K9lQ" target="_blank" rel="noopener" aria-label="YouTube で動画を見る"><img src="https://i.ytimg.com/vi/38gZQY5K9lQ/maxresdefault.jpg" alt="第20回のサムネイル" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/38gZQY5K9lQ/hqdefault.jpg'}"><span class="play"></span></a>
+    <div class="watch"><a class="btn sub" href="https://www.youtube.com/watch?v=38gZQY5K9lQ" target="_blank" rel="noopener"><span class="yt"></span>YouTube で見る</a><a class="btn ghost" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener">チャンネル登録</a></div>
+    <p class="note">YouTube のタイトル：llama.cpp 1.0の新機能「MoEキャッシュ」でGPUメモリを減らすと速い？ 小さい置き場では逆に遅くなった（RTX 5070 Ti）｜第20回</p>
+
+    <h2>この回で試したこと</h2>
+    <table><tr><th>PC</th><td>Windows 11、RTX 5070 Ti（16GB）。ほかのアプリは運営のまま（GPU のメモリは起動前 約2,964〜2,973MiB 使用中）</td></tr><tr><th>実行</th><td>llama.cpp b12359（v1.0.0 のタグと同じコミット b1b770d90。公式の Windows CUDA 13.5 版、MIT）。比べは前の版 b12237（第17回で入れたもの）</td></tr><tr><th>モデル</th><td>LiquidAI/LFM2.5-8B-A1B-GGUF の Q4_K_M（5,155,564,768 バイト）。LFM Open License</td></tr><tr><th>ダウンロード</th><td>ビルド＋モデルで 5,335,110,880 バイト（約5.3GB、約5.0GiB）</td></tr><tr><th>速さの測り方</th><td>同じ問い、温度0、256トークン、6回のうち2〜6回目の中央値。GPU のメモリは「速さの間の最大 − 起動前」（nvidia-smi）。PC のメモリは llama-server の PeakPagefileUsage（コミット）</td></tr><tr><th>答えの確かめ</th><td>tests.py の20問（第17回と同じ形の判定）、温度0・seed 1・最大1024トークン、1回ずつ。全部 GPU（G）と文字が同じかを比べた</td></tr><tr><th>止める決まり</th><td>仮想メモリの空きが 1GB を切ったら止める</td></tr><tr><th>試し方</th><td>2026-11-17 9:16 に保存。結果を見てから足した条件は同じファイルの「変更」（9:26・9:48・9:55）</td></tr></table>
+
+    <h2>結果（実測）</h2>
+    <table><tr><th>全部 GPU（G）</th><td>毎秒 422.5 トークン、GPU のメモリの増え 5,395MiB</td></tr><tr><th>--cpu-moe（キャッシュなし、C）</th><td>59.4、1,027MiB</td></tr><tr><th>C＋キャッシュ（既定の mmap あり）</th><td>256MiB 20.2／512MiB 26.2／1024MiB 39.7／2048MiB 78.5（結果を見てから足した 3072MiB 170.7／4096MiB 279.6）</td></tr><tr><th>C＋キャッシュ＋--load-mode none（結果を見てから足した）</th><td>なし 59.3／256MiB 68.1／512MiB 81.6／1024MiB 110.9／2048MiB 170.1／3072MiB 240.2／4096MiB 仮想メモリの空きが 800MiB になり止めた</td></tr><tr><th>確保する仮想メモリ（コミット）</th><td>2048MiB で mmap あり 4,013MiB → --load-mode none 8,695MiB（4,682MiB、約4.6GiB 多い）。実際に使ったメモリ（作業セットの最大）は 5,341 → 5,372MiB でほぼ同じ</td></tr><tr><th>--moe-cache-cpu-share（1024MiB、mmap あり）</th><td>0.5 で 47.1、1 で 64.0（1 は結果を見てから足した）</td></tr><tr><th>前の版 b12237</th><td>全部 GPU 420.7、--cpu-moe 58.3（1.0 とほぼ同じ）</td></tr><tr><th>答えが G と文字まで同じ（20問）</th><td>G をもう一度 20/20、512MiB 20/20、2048MiB 20/20、1024MiB＋--load-mode none 20/20。C 0/20、cpu-share 0.5 0/20、前の版の全部 GPU 0/20</td></tr></table>
+
+    <h2>わかったこと</h2>
+    <ul><li>1.0 の既定（mmap あり）では、置き場 256〜1024MiB がキャッシュなし（59.4）より遅かった（20.2〜39.7）。2048MiB で上回った（78.5、1.32倍）</li><li>サーバーのログに「--load-mode none を考えて」という警告が --cpu-moe のすべての条件で出ていた。そのとおりに足すと、置き場が小さくてもキャッシュなしより速くなった（256MiB 68.1〜3072MiB 240.2）</li><li>そのかわり、確保する仮想メモリが約4.6GiB 増え、4096MiB ではこの PC の空きが足りず止めた</li><li>専門家の計算を GPU でする限り、キャッシュを使っても20問の答えは全部 GPU と文字まで同じだった。専門家を CPU で計算すると、最初の数十〜数百文字のどこかで言い回しが変わった（例 q14：「brew」と「make」）</li><li>同じ設定なら何度聞いても同じだった。前の版と 1.0 は、全部 GPU どうしでも20問すべて文字が違った</li><li>このモデル（5.16GB）は 16GB の GPU に全部入り、全部 GPU（422.5）が一番速い。今回は試すために、わざと専門家を CPU に置いた</li></ul>
+
+    <h2>結果の範囲</h2>
+    <div class="limits"><ul><li>このモデル・この PC・この問いの範囲の結果です。一般化はできません</li><li>--load-mode none、3072・4096MiB、cpu-share 1、答えの確かめの一部（G2・C2・1024MiB＋--load-mode none）は、結果を見てから足した条件です</li><li>mmap があるとなぜキャッシュが遅いのか、原因は調べていません。ログの警告どおりにしたら速くなった、までが分かったことです</li><li>GPU に入りきらない大きなモデルでは試していません</li><li>4096MiB＋--load-mode none は止めたため値がなく、その後に予定していた全部 GPU＋--load-mode none は動かしていません</li><li>形の判定の正解は 14〜15/20 で違いは1問です。どちらがよいかは、この20問ではいえません</li><li>画面の記録で Web UI が表示した速さは、Web UI 自身の設定で送ったもので、上の値とは別です</li></ul></div>
+
+    <h2>よくある質問</h2>
+    <details open><summary>MoE の専門家キャッシュを使うと速くなりますか？</summary><p>今回の既定の設定（mmap あり）では、置き場 256〜1024MiB でキャッシュなし（毎秒59.4トークン）より遅くなりました（20.2〜39.7）。2048MiB では 78.5 で上回りました。</p></details><details open><summary>遅くならないようにするには？</summary><p>ログの警告どおり --load-mode none を足すと、256MiB でも 68.1、3072MiB で 240.2 になりました。ただし確保する仮想メモリが約4.6GiB 増え、4096MiB では PC の空きが足りず止めました。</p></details><details open><summary>キャッシュを使うと答えは変わりますか？</summary><p>専門家の計算を GPU でする限り、20問すべてで全部 GPU と文字まで同じでした。専門家を CPU で計算すると言い回しが変わりました。</p></details><details open><summary>前の版と比べて速くなりましたか？</summary><p>全部 GPU で 420.7 → 422.5、--cpu-moe で 58.3 → 59.4 で、ほぼ同じでした。</p></details><details open><summary>GPU のメモリはどれだけ減りますか？</summary><p>全部 GPU の増え 5,395MiB に対し、--cpu-moe だけで 1,027MiB、置き場 1024MiB で 2,051MiB でした。</p></details>
+
+    
+    <div class="pager"><a href="../ep020/"><small>← 前の回</small>第19回</a><span></span></div>
+
+    <div class="cta">
+      <b>次の検証も、YouTube で公開しています</b>
+      <p>月・水・金の18:00に、話題の技術を手元のゲーミングPCで試した結果を出しています。</p>
+      <a class="btn sub" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>チャンネル登録する</a>
+    </div>
+    <p class="note">このページと動画は、AI（Anthropic の Claude）が検証の記録をもとに作り、人間の運営が公開を承認しています。数値は記録（ログ）の値です。音声：VOICEVOX:春日部つむぎ ／ 映像の一部：Google Veo（AI生成）</p>
+  </article>
+</div>
+<footer><div class="wrap">© 全自動AIテックラボ（個人運営）　<a href="../../">トップ</a>　<a href="../../privacy.html">プライバシーポリシー</a>　<a href="https://www.youtube.com/@auto-ai-techlab" target="_blank" rel="noopener">YouTube チャンネル</a></div></footer>
+</body>
+</html>
