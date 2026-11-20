@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WP0CG915CL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WP0CG915CL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU（16GB）に入らない 20.5GB の MoE（Qwen3.6-35B-A3B）は llama.cpp 1.0 で動く？ 専門家を CPU に置けば動いた。新機能のキャッシュは 2048MiB では遅く、8192MiB で 82.6（昔のやり方の約1.33倍）｜第21回｜全自動AIテックラボ</title>
+<meta name="description" content="第20回の続きです。llama.cpp 1.0（b12359）で、RTX 5070 Ti（16GB）に入りきらない Qwen3.6-35B-A3B（Q4_K_M、20,542,732,576 バイト、約20.5GB）を動かしました。何も…">
+<link rel="canonical" href="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep022/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="全自動AIテックラボ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GPU（16GB）に入らない 20.5GB の MoE（Qwen3.6-35B-A3B）は llama.cpp 1.0 で動く？ 専門家を CPU に置けば動いた。新機能のキャッシュは 2048MiB では遅く、8192MiB で 82.6（昔のやり方の約1.33倍）">
+<meta property="og:description" content="第20回の続きです。llama.cpp 1.0（b12359）で、RTX 5070 Ti（16GB）に入りきらない Qwen3.6-35B-A3B（Q4_K_M、20,542,732,576 バイト、約20.5GB）を動かしました。何も…">
+<meta property="og:url" content="https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep022/">
+<meta property="og:image" content="https://i.ytimg.com/vi/lhk7w8pD748/maxresdefault.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GPU（16GB）に入らない 20.5GB の MoE（Qwen3.6-35B-A3B）は llama.cpp 1.0 で動く？ 専門家を CPU に置けば動いた。新機能のキャッシュは 2048MiB では遅く、8192MiB で 82.6（昔のやり方の約1.33倍）">
+<meta name="twitter:description" content="第20回の続きです。llama.cpp 1.0（b12359）で、RTX 5070 Ti（16GB）に入りきらない Qwen3.6-35B-A3B（Q4_K_M、20,542,732,576 バイト、約20.5GB）を動かしました。何も…">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/lhk7w8pD748/maxresdefault.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org", "name": "全自動AIテックラボ", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/", "logo": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/favicon.svg", "sameAs": ["https://www.youtube.com/@auto-ai-techlab"], "email": "autotoolspublisher@gmail.com", "description": "話題の技術（AIモデル・開発ツール・アプリ）を手元のゲーミングPCで実際に動かして確かめるYouTubeチャンネル。企画から編集までAI（Claude）が担当し、公開は人間が承認する。"}, {"@type": "VideoObject", "name": "llama.cpp 1.0でGPUに入らない20GBのMoE（Qwen3.6-35B-A3B）は動く？ 新機能キャッシュと昔のやり方を比べた（RTX 5070 Ti）｜第21回", "description": "第20回の続きです。llama.cpp 1.0（b12359）で、RTX 5070 Ti（16GB）に入りきらない Qwen3.6-35B-A3B（Q4_K_M、20,542,732,576 バイト、約20.5GB）を動かしました。何も付けない起動、専門家を全部 CPU に置く --cpu-moe、新機能の専門家キャッシュ（--moe-cache-mib）、昔からのやり方（--n-cpu-moe で後ろの層の専門家を GPU に置く）を、書く速さと GPU・PC のメモリで比べました。試し方は試す前に保存し、結果を見てから足した条件はそのように書いています。", "thumbnailUrl": ["https://i.ytimg.com/vi/lhk7w8pD748/maxresdefault.jpg", "https://i.ytimg.com/vi/lhk7w8pD748/hqdefault.jpg"], "uploadDate": "2026-11-20T09:00:30Z", "contentUrl": "https://www.youtube.com/watch?v=lhk7w8pD748", "embedUrl": "https://www.youtube.com/embed/lhk7w8pD748", "inLanguage": "ja", "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "duration": "PT7M20S", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep022/#video"}, {"@type": "Article", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep022/#article", "headline": "GPU（16GB）に入らない 20.5GB の MoE（Qwen3.6-35B-A3B）は llama.cpp 1.0 で動く？ 専門家を CPU に置けば動いた。新機能のキャッシュは 2048MiB では遅く、8192MiB で 82.6（昔のやり方の約1.33倍）", "description": "第20回の続きです。llama.cpp 1.0（b12359）で、RTX 5070 Ti（16GB）に入りきらない Qwen3.6-35B-A3B（Q4_K_M、20,542,732,576 バイト、約20.5GB）を動かしました。何も付けない起動、専門家を全部 CPU に置く --cpu-moe、新機能の専門家キャッシュ（--moe-cache-mib）、昔からのやり方（--n-cpu-moe で後ろの層の専門家を GPU に置く）を、書く速さと GPU・PC のメモリで比べました。試し方は試す前に保存し、結果を見てから足した条件はそのように書いています。", "url": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep022/", "datePublished": "2026-11-20T18:00:30+09:00", "dateModified": "2026-11-20T18:25:19.610379+09:00", "inLanguage": "ja", "image": "https://i.ytimg.com/vi/lhk7w8pD748/maxresdefault.jpg", "author": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "publisher": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/#org"}, "about": {"@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep022/#video"}, "mainEntityOfPage": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep022/"}, {"@type": "FAQPage", "@id": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep022/#faq", "mainEntity": [{"@type": "Question", "name": "16GB の GPU で 20.5GB の MoE は動きますか？", "acceptedAnswer": {"@type": "Answer", "text": "専門家を CPU に置く --cpu-moe で動きました（毎秒 41.3 トークン）。何も付けない起動は、仮想メモリの空きが 1GB を切ったので止めました。"}}, {"@type": "Question", "name": "新機能の専門家キャッシュは速いですか？", "acceptedAnswer": {"@type": "Answer", "text": "2048MiB では 35.5 で、キャッシュなし（41.3）より遅くなりました。4096MiB で 50.9、8192MiB で 82.6 でした。"}}, {"@type": "Question", "name": "昔からのやり方（--n-cpu-moe）と比べると？", "acceptedAnswer": {"@type": "Answer", "text": "同じくらいの GPU のメモリで、4GB 相当は 50.0 対 50.9 でほぼ同じ、8GB 相当は 62.1 対 82.6 でキャッシュが約1.33倍でした。"}}, {"@type": "Question", "name": "第20回の --load-mode none は使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "このモデル・このPCでは使えません。CPU に置く専門家（約16.9GiB）が仮想メモリの空きより大きいためで、計算で決めて動かしていません。"}}, {"@type": "Question", "name": "答えはちゃんと書けましたか？", "acceptedAnswer": {"@type": "Answer", "text": "20問のうち答えを書けた10問は、すべて形の決まりを守れました。残りの10問は1024トークンの上限の中で考え終わらず、答えが空でした。"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/"}, {"@type": "ListItem", "position": 2, "name": "第21回", "item": "https://autotoolspublisher-ui.github.io/auto-ai-techlab/videos/ep022/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0f1724; --bg2: #152033; --panel: #1b2940; --line: #2a3b57; --text: #eef3fb; --muted: #9fb0c8; --accent: #ffb547; --blue: #4fb3ff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "BIZ UDPGothic", "Yu Gothic UI", "Hiragino Sans", sans-serif; line-height: 1.85; }
+  a { color: var(--blue); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  header.top { border-bottom: 1px solid var(--line); background: rgba(15,23,36,.9); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+  header.top .wrap { max-width: 1080px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { color: var(--text); text-decoration: none; font-weight: 700; }
+  .brand span { color: var(--accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: 999px; font-weight: 700; text-decoration: none; white-space: nowrap; line-height: 1.2; }
+  .btn.sub { background: #ff3b3b; color: #fff; box-shadow: 0 8px 24px rgba(255,59,59,.3); }
+  .btn.ghost { border: 2px solid var(--line); color: var(--text); }
+  .btn.small { height: 36px; padding: 0 16px; font-size: 14px; }
+  .yt { width: 22px; height: 16px; background: #fff; border-radius: 4px; position: relative; flex: none; display: inline-block; }
+  .yt:after { content: ""; position: absolute; left: 8px; top: 4px; border-left: 8px solid #ff3b3b; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  nav.crumb { font-size: 13px; color: var(--muted); padding: 18px 0 0; }
+  nav.crumb a { color: var(--muted); }
+  article { padding: 18px 0 56px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--muted); font-size: 14px; }
+  .no { color: var(--accent); font-weight: 700; }
+  .tag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: rgba(79,179,255,.15); color: var(--blue); }
+  h1 { font-size: clamp(24px, 3.6vw, 34px); line-height: 1.45; margin: 10px 0 16px; }
+  .lead { color: #d7e0ee; font-size: 17px; }
+  .thumb { position: relative; display: block; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #0b111c; margin: 24px 0 14px; border: 1px solid var(--line); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb .play { position: absolute; right: 14px; bottom: 14px; width: 64px; height: 44px; border-radius: 12px; background: rgba(255,59,59,.92); }
+  .thumb .play:after { content: ""; position: absolute; left: 25px; top: 12px; border-left: 17px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .watch { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
+  h2 { font-size: 21px; margin: 40px 0 12px; padding-left: 12px; border-left: 4px solid var(--accent); line-height: 1.5; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 400; width: 34%; }
+  td { color: #e6edf7; }
+  ul { padding-left: 1.3em; }
+  li { margin: 6px 0; color: #d7e0ee; }
+  .limits { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; color: var(--muted); font-size: 14px; }
+  .limits li { color: var(--muted); }
+  .related { list-style: none; padding: 0; }
+  .related li { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 8px 0; }
+  .related .src { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; margin-right: 8px; }
+  .related small { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px; margin: 10px 0; }
+  summary { cursor: pointer; font-weight: 700; }
+  details p { margin-top: 8px; color: #d7e0ee; }
+  .pager { display: flex; justify-content: space-between; gap: 14px; margin-top: 44px; font-size: 14px; }
+  .pager a { flex: 1; display: block; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; color: var(--text); text-decoration: none; }
+  .pager a small { display: block; color: var(--muted); }
+  .pager .next { text-align: right; }
+  .cta { margin-top: 44px; text-align: center; background: linear-gradient(135deg, #1b2940, #20304d); border: 1px solid var(--line); border-radius: 18px; padding: 28px 20px; }
+  .cta p { color: var(--muted); margin: 6px 0 18px; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 26px; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  @media (max-width: 560px) { th { width: 40%; } .pager { flex-direction: column; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../../">全自動<span>AI</span>テックラボ</a>
+  <a class="btn sub small" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>登録</a>
+</div></header>
+<div class="wrap">
+  <nav class="crumb" aria-label="パンくずリスト"><a href="../../">トップ</a> ／ <a href="../../#videos">動画</a> ／ 第21回</nav>
+  <article>
+    <div class="meta"><span class="no">第21回</span><span class="tag">ローカルAI</span><span>公開：<time datetime="2026-11-20">2026年11月20日</time></span><span>動画 7分20秒</span></div>
+    <h1>GPU（16GB）に入らない 20.5GB の MoE（Qwen3.6-35B-A3B）は llama.cpp 1.0 で動く？ 専門家を CPU に置けば動いた。新機能のキャッシュは 2048MiB では遅く、8192MiB で 82.6（昔のやり方の約1.33倍）</h1>
+    <p class="lead">第20回の続きです。llama.cpp 1.0（b12359）で、RTX 5070 Ti（16GB）に入りきらない Qwen3.6-35B-A3B（Q4_K_M、20,542,732,576 バイト、約20.5GB）を動かしました。何も付けない起動、専門家を全部 CPU に置く --cpu-moe、新機能の専門家キャッシュ（--moe-cache-mib）、昔からのやり方（--n-cpu-moe で後ろの層の専門家を GPU に置く）を、書く速さと GPU・PC のメモリで比べました。試し方は試す前に保存し、結果を見てから足した条件はそのように書いています。</p>
+    <a class="thumb" href="https://www.youtube.com/watch?v=lhk7w8pD748" target="_blank" rel="noopener" aria-label="YouTube で動画を見る"><img src="https://i.ytimg.com/vi/lhk7w8pD748/maxresdefault.jpg" alt="第21回のサムネイル" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/lhk7w8pD748/hqdefault.jpg'}"><span class="play"></span></a>
+    <div class="watch"><a class="btn sub" href="https://www.youtube.com/watch?v=lhk7w8pD748" target="_blank" rel="noopener"><span class="yt"></span>YouTube で見る</a><a class="btn ghost" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener">チャンネル登録</a></div>
+    <p class="note">YouTube のタイトル：llama.cpp 1.0でGPUに入らない20GBのMoE（Qwen3.6-35B-A3B）は動く？ 新機能キャッシュと昔のやり方を比べた（RTX 5070 Ti）｜第21回</p>
+
+    <h2>この回で試したこと</h2>
+    <table><tr><th>PC</th><td>Windows 11、RTX 5070 Ti（16GB）、メモリ 31.4GB。ほかのアプリは運営のまま（GPU のメモリは 1,829〜2,750MiB 使用中）</td></tr><tr><th>実行</th><td>llama.cpp b12359（第20回と同じ。コミット b1b770d90、MIT）</td></tr><tr><th>モデル</th><td>ggml-org/Qwen3.6-35B-A3B-GGUF の Q4_K_M（20,542,732,576 バイト、約20.5GB・19.1GiB）。Apache-2.0。40層、専門家 256（1回に 8＋共有1）、1回に使うのは約3B</td></tr><tr><th>専門家の大きさ</th><td>1層 432.0MiB×40層＝18,119,393,280 バイト（約16.9GiB）。専門家以外は 2,412,349,952 バイト</td></tr><tr><th>速さの測り方</th><td>同じ問い、温度0、256トークン、6回のうち2〜6回目の中央値。GPU のメモリは「速さの間の最大 − 起動前」（nvidia-smi）。PC のメモリは llama-server の PeakPagefileUsage（コミット）</td></tr><tr><th>答えの確かめ</th><td>第17回の tests.py の20問、温度0・seed 1・最大1024トークン、考える部分はオンのまま</td></tr><tr><th>止める決まり</th><td>仮想メモリ（コミット）の空きが 1GB を切ったら止める</td></tr><tr><th>試し方</th><td>2026-11-19 9:19 に保存（測り始め 9:20）。結果を見てから足した・変えたことは同じファイルの「変更」（9:29・9:36）</td></tr></table>
+
+    <h2>結果（実測）</h2>
+    <table><tr><th>何も付けない（D）</th><td>止めた（読み込み中）。起動から約6.6秒で GPU のメモリが 2,750→15,155MiB、仮想メモリの空きが 12,562→518MiB</td></tr><tr><th>--fit-target 4096（D_ft4096、結果を見てから足した）</th><td>止めた（読み込みの途中で空きが一時 744MiB）。GPU に載せたあとは空き 5,198〜5,238MiB</td></tr><tr><th>専門家を全部 CPU（--cpu-moe、C）</th><td>毎秒 41.3 トークン、GPU のメモリの増え 3,113MiB</td></tr><tr><th>C＋キャッシュ</th><td>2048MiB 35.5（5,147MiB）／4096MiB 50.9（7,195MiB）／8192MiB 82.6（11,291MiB）</td></tr><tr><th>昔からのやり方（--n-cpu-moe）</th><td>後ろの9層を GPU 50.0（6,979MiB）／後ろの18層を GPU 62.1（10,867MiB）</td></tr><tr><th>1回目（温まる前）</th><td>キャッシュ 8.3〜9.7（256トークンに 40〜44秒）、昔からのやり方 28.1〜35.9（9〜11秒）、キャッシュなし 17.3（17.7秒）</td></tr><tr><th>20問（K4096、結果を見てから）</th><td>答えを書けた 10/20、そのうち形の決まりを守れた 10/10、上限で止まり答えが空 10。20問で 491.4秒</td></tr><tr><th>20問（K8192）</th><td>15問目のあとに仮想メモリの空きが 979MiB になり止めた。15問で答えを書けた 8、守れた 8/8、空 7</td></tr><tr><th>比べ：第20回の LFM2.5-8B-A1B（全部 GPU）</th><td>答えを書けた 18/20（うち日本語 9）、守れた 15/18（日本語の9問では 7/9）、29.4秒</td></tr></table>
+
+    <h2>わかったこと</h2>
+    <ul><li>20.5GB のモデルは、16GB の GPU でも、専門家を CPU に置けば動いた（毎秒 41.3 トークン）</li><li>何も付けないと GPU を 15,155MiB まで使い、仮想メモリの空きが 1GB を切ったので止めた。このPCでは GPU のメモリを使うほど仮想メモリの空きが減る（原因は調べていない）</li><li>新機能のキャッシュは、2048MiB ではキャッシュなしより遅かった（35.5 対 41.3）。4096MiB で 50.9、8192MiB で 82.6（キャッシュなしの2.0倍）</li><li>同じくらいの GPU のメモリで昔からのやり方と比べると、4GB 相当はほぼ同じ（50.9 対 50.0）、8GB 相当はキャッシュが約1.33倍（82.6 対 62.1）</li><li>1回目の問いは、キャッシュの条件が 40〜44秒かかり、昔からのやり方（9〜11秒）より遅かった。キャッシュに専門家が入るまでの間と考えている（推測）</li><li>第20回で速くなった --load-mode none は、CPU に置く専門家（約16.9GiB）が仮想メモリの空き（最大 15.2GiB）より大きいため使えない（計算で決め、動かしていない）</li><li>20問では、答えを書けた問いは全部、形の決まりを守れた。半分の10問は1024トークンの上限の中で考え終わらず、答えが空だった</li></ul>
+
+    <h2>結果の範囲</h2>
+    <div class="limits"><ul><li>このモデル・この PC・この問いの範囲の結果です。一般化はできません</li><li>--fit-target 4096（D_ft4096）と、20問の K4096 は結果を見てから足した条件です</li><li>D_ft4096 は読み込みの途中の一時的な減りで止めたもので、止めなければ動いた可能性があります</li><li>K8192 の20問は15問目で止めたため、20問そろっていません</li><li>上限を上げる・考える部分を切る（enable_thinking）は試していません。どちらが賢いかは、この20問・この上限では言えません</li><li>仮想メモリの空きが減る原因や、1回目が遅い理由は調べていません</li><li>画面の記録で Web UI が送ったものは Web UI 自身のひな形（481トークン）で、上の速さの値とは別です</li></ul></div>
+
+    <h2>よくある質問</h2>
+    <details open><summary>16GB の GPU で 20.5GB の MoE は動きますか？</summary><p>専門家を CPU に置く --cpu-moe で動きました（毎秒 41.3 トークン）。何も付けない起動は、仮想メモリの空きが 1GB を切ったので止めました。</p></details><details open><summary>新機能の専門家キャッシュは速いですか？</summary><p>2048MiB では 35.5 で、キャッシュなし（41.3）より遅くなりました。4096MiB で 50.9、8192MiB で 82.6 でした。</p></details><details open><summary>昔からのやり方（--n-cpu-moe）と比べると？</summary><p>同じくらいの GPU のメモリで、4GB 相当は 50.0 対 50.9 でほぼ同じ、8GB 相当は 62.1 対 82.6 でキャッシュが約1.33倍でした。</p></details><details open><summary>第20回の --load-mode none は使えますか？</summary><p>このモデル・このPCでは使えません。CPU に置く専門家（約16.9GiB）が仮想メモリの空きより大きいためで、計算で決めて動かしていません。</p></details><details open><summary>答えはちゃんと書けましたか？</summary><p>20問のうち答えを書けた10問は、すべて形の決まりを守れました。残りの10問は1024トークンの上限の中で考え終わらず、答えが空でした。</p></details>
+
+    
+    <div class="pager"><a href="../ep021/"><small>← 前の回</small>第20回</a><span></span></div>
+
+    <div class="cta">
+      <b>次の検証も、YouTube で公開しています</b>
+      <p>月・水・金の18:00に、話題の技術を手元のゲーミングPCで試した結果を出しています。</p>
+      <a class="btn sub" href="https://www.youtube.com/@auto-ai-techlab?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt"></span>チャンネル登録する</a>
+    </div>
+    <p class="note">このページと動画は、AI（Anthropic の Claude）が検証の記録をもとに作り、人間の運営が公開を承認しています。数値は記録（ログ）の値です。音声：VOICEVOX:春日部つむぎ ／ 映像の一部：Google Veo（AI生成）</p>
+  </article>
+</div>
+<footer><div class="wrap">© 全自動AIテックラボ（個人運営）　<a href="../../">トップ</a>　<a href="../../privacy.html">プライバシーポリシー</a>　<a href="https://www.youtube.com/@auto-ai-techlab" target="_blank" rel="noopener">YouTube チャンネル</a></div></footer>
+</body>
+</html>
